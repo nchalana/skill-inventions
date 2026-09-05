@@ -293,12 +293,12 @@ const navGroups = [
       {
         title: 'Office Hubs',
         copy: 'New York, Hyderabad, and Toronto regional presence',
-        href: '#contact',
+        href: '/contact',
       },
       {
         title: 'Contact',
         copy: 'Talk to Skill Inventions about technology, talent, or WackoWave',
-        href: 'mailto:hello@skillinventions.com',
+        href: '/contact',
       },
     ],
   },
@@ -496,8 +496,8 @@ const footerColumns = [
       { label: 'MWBE Certified', href: '#contact' },
       { label: 'E-Verify Employer', href: '#contact' },
       { label: 'Public Sector / M/WBE', href: '/public-sector' },
-      { label: 'Office Hubs', href: '#contact' },
-      { label: 'Contact', href: 'mailto:hello@skillinventions.com' },
+      { label: 'Office Hubs', href: '/contact' },
+      { label: 'Contact', href: '/contact' },
     ],
   },
 ];
