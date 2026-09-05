@@ -218,7 +218,7 @@ const navGroups = [
       {
         title: 'Platform Intelligence',
         copy: 'Resume, credential, and document forensics for decision support',
-        href: '#wackowave',
+        href: '/wackowave/platform-intelligence',
       },
       {
         title: 'Document Verification System',
@@ -263,7 +263,7 @@ const navGroups = [
       {
         title: 'Human Review Model',
         copy: 'Risk signals are surfaced for people to review, not used for blind rejection',
-        href: '#wackowave',
+        href: '/wackowave/platform-intelligence',
       },
       {
         title: 'Certifications & Verification',
@@ -473,7 +473,7 @@ const footerColumns = [
   {
     title: 'WackoWave',
     links: [
-      { label: 'Platform Intelligence', href: '#wackowave' },
+      { label: 'Platform Intelligence', href: '/wackowave/platform-intelligence' },
       { label: 'Document Verification System', href: '#dvs' },
       { label: 'JobSearch AI Agent', href: '#jobsearch' },
       { label: 'Sample Reports', href: '#reports' },

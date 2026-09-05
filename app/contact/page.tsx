@@ -156,6 +156,30 @@ export default function ContactPage() {
               </section>
             </aside>
           </div>
+
+          <section className="mt-8 overflow-hidden rounded-lg border border-border bg-white shadow-sm">
+            <div className="flex flex-col gap-2 border-b border-border p-5 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <h2 className="text-2xl font-semibold text-[#08111f]">Find Us</h2>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Skill Inventions Inc., 61-36, 170th Street, Suite M-2, Fresh Meadows, NY 11365
+                </p>
+              </div>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=61-36%20170th%20Street%20Suite%20M-2%20Fresh%20Meadows%20NY%2011365"
+                className="text-sm font-semibold text-[#2037d8] transition hover:text-[#172db8]"
+              >
+                Open in Google Maps
+              </a>
+            </div>
+            <iframe
+              title="Skill Inventions corporate office map"
+              src="https://www.google.com/maps?q=61-36%20170th%20Street%20Suite%20M-2%20Fresh%20Meadows%20NY%2011365&output=embed"
+              className="h-[360px] w-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </section>
         </div>
       </section>
     </main>
