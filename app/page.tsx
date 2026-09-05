@@ -752,15 +752,17 @@ export default function Home() {
             <div className="grid gap-4 xl:grid-cols-[0.95fr_1.05fr]">
               <div>
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--si-violet)]">
-                Focused AI delivery bench
+                Focused AI Delivery Bench
               </p>
               <h3 className="mt-2 text-2xl font-semibold leading-tight">
-                Built for hiring managers who need the right role, not hundreds of profiles.
+                Built for hiring managers who need the right fit, fast.
               </h3>
               <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                Share the outcome, stack, seniority, region, and start date. Skill
-                Inventions maps the requirement to AI, data, cloud, development,
-                analytics, and delivery professionals across the US, Canada, and India.
+                Share the outcome, the stack, the seniority, the region, and
+                the start date. Skill Inventions matches it to pre-vetted AI,
+                data, cloud, development, analytics, and delivery professionals
+                across the US, Canada, and India so you spend your time
+                interviewing the right people, not searching for them.
               </p>
             </div>
               <div className="rounded-xl border border-[#2037d8]/15 bg-[color-mix(in_oklch,var(--si-sky),white_96%)] p-4 shadow-sm">
