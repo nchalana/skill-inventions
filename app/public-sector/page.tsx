@@ -10,19 +10,6 @@ export const metadata: Metadata = {
     'Skill Inventions supports public-sector technology staffing, AI/data delivery, and M/WBE partnership opportunities for agencies, authorities, universities, and prime vendors.',
 };
 
-const agencyTargets = [
-  'NYC agencies',
-  'NYS procurement',
-  'NYS OGS opportunities',
-  'MTA',
-  'Port Authority',
-  'NYC Health + Hospitals',
-  'NYC School Construction Authority',
-  'NYC Housing Authority',
-  'County governments',
-  'Public universities',
-];
-
 const publicSectorServices = [
   ['AI & Data Talent', 'AI engineers, data engineers, analysts, data scientists, LLM engineers, MLOps, BI developers, and automation specialists.'],
   ['IT Staff Augmentation', 'Cloud, DevOps, infrastructure, cybersecurity, QA/SDET, ERP, full-stack, mobile, and architecture professionals.'],
@@ -149,34 +136,6 @@ export default function PublicSectorPage() {
         </div>
       </section>
 
-      <section className="border-b border-border bg-[#f0f7ff]">
-        <div className="mx-auto grid max-w-[92rem] gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
-          <div>
-            <Badge className="mb-3 rounded-lg bg-[#2037d8] text-white">
-              Agency and authority focus
-            </Badge>
-            <h2 className="text-2xl font-semibold leading-tight">
-              Built for procurement conversations, not generic staffing pitches.
-            </h2>
-            <p className="mt-3 text-sm leading-6 text-muted-foreground">
-              Skill Inventions can support eligible staffing, consulting,
-              subcontracting, and technology-service opportunities where buyers
-              need AI/data skills, delivery confidence, and M/WBE participation.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {agencyTargets.map((target) => (
-              <span
-                key={target}
-                className="rounded-full border border-[#2037d8]/15 bg-white px-3 py-1.5 text-xs font-semibold text-foreground shadow-sm"
-              >
-                {target}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="bg-white">
         <div className="mx-auto max-w-[92rem] px-4 py-10 sm:px-6 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
@@ -198,26 +157,6 @@ export default function PublicSectorPage() {
                   </div>
                 </article>
               ))}
-            </div>
-          </div>
-
-          <div className="mt-8 rounded-xl border border-[#2037d8]/15 bg-[#08111f] p-5 text-white shadow-xl shadow-[#2037d8]/10">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-              <div>
-                <p className="text-sm font-semibold text-[#c8ff1a]">Need someone to open doors with NYC/NYS agencies?</p>
-                <p className="mt-1 max-w-3xl text-sm leading-6 text-white/66">
-                  Skill Inventions is also open to experienced public-sector
-                  business development and procurement partners who understand
-                  agency relationships, contract vehicles, and technology staffing opportunities.
-                </p>
-              </div>
-              <Button
-                nativeButton={false}
-                render={<a href="mailto:hello@skillinventions.com?subject=Public%20Sector%20Business%20Development%20Partner" />}
-                className="shrink-0 rounded-lg bg-[#c8ff1a] text-zinc-950 hover:bg-[#d6ff45]"
-              >
-                Introduce a Partner
-              </Button>
             </div>
           </div>
         </div>
