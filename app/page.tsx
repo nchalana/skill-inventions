@@ -188,22 +188,27 @@ const navGroups = [
       {
         title: 'Technology Ecosystem',
         copy: 'Cloud, data, ERP, mobile, QA, security, AI, and design platforms we support',
-        href: '#ecosystem',
+        href: '/capabilities/technology-ecosystem',
       },
       {
         title: 'AI Talent Solutions',
         copy: '48-hour shortlists for AI, data, cloud, and automation roles',
-        href: '#ai-talent',
+        href: '/capabilities/ai-talent-solutions',
       },
       {
-        title: 'Connected Experiences',
-        copy: 'AI workflows, cloud platforms, data pipelines, security signals, and human oversight',
-        href: '#connected-experiences',
+        title: 'Cloud & Platform Engineering',
+        copy: 'Infrastructure modernization, cloud operations, automation, and reliability support',
+        href: '/capabilities/cloud-platform-engineering',
       },
       {
-        title: 'Industry Journey',
-        copy: 'How Skill Inventions evolved from mobile-first delivery through AI-native trust',
-        href: '#journey',
+        title: 'Data & AI Delivery',
+        copy: 'Data pipelines, BI, analytics, AI integration, and governed automation',
+        href: '/capabilities/data-ai-delivery',
+      },
+      {
+        title: 'Security & Trust',
+        copy: 'Cybersecurity, identity, verification, compliance support, and human review workflows',
+        href: '/capabilities/security-trust',
       },
     ],
   },
@@ -458,11 +463,11 @@ const footerColumns = [
   {
     title: 'Capabilities',
     links: [
-      { label: 'Technology Ecosystem', href: '#ecosystem' },
-      { label: 'Connected Experiences', href: '#connected-experiences' },
-      { label: 'AI Talent Solutions', href: '#ai-talent' },
-      { label: 'Cloud & Infrastructure', href: '#ecosystem' },
-      { label: 'Product Design & Delivery', href: '#ecosystem' },
+      { label: 'Technology Ecosystem', href: '/capabilities/technology-ecosystem' },
+      { label: 'AI Talent Solutions', href: '/capabilities/ai-talent-solutions' },
+      { label: 'Cloud & Platform Engineering', href: '/capabilities/cloud-platform-engineering' },
+      { label: 'Data & AI Delivery', href: '/capabilities/data-ai-delivery' },
+      { label: 'Security & Trust', href: '/capabilities/security-trust' },
     ],
   },
   {
