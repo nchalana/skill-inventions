@@ -252,6 +252,8 @@ const processAccentClasses = [
 
 const processIcons = [SearchCheck, Network, Rocket, TrendingUp];
 
+const processSummaryIcons = [Network, TrendingUp, CheckCircle2];
+
 const kpiScorecard = [
   ['Reliability', '99.8%', 'Target uptime', 'Incidents, recovery, release defects', 'On track'],
   ['Adoption', '3x', 'Faster enablement', 'Usage, readiness, support demand', 'Improving'],
@@ -435,36 +437,54 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
               </div>
               <div className="grid gap-3 sm:grid-cols-3">
                 {[
-                  ['01', 'Process Flow', 'Assess → Design → Deploy → Scale'],
-                  ['02', 'KPI Signal', 'Reliability · Adoption · Efficiency · Risk'],
-                  ['03', 'Outcome View', 'Roadmap · Ownership · Business impact'],
-                ].map(([number, label, value], index) => (
-                  <div key={label} className="border border-[#2037d8]/14 bg-[#f8fbff] p-4 shadow-sm">
-                    <div className="mb-3 flex items-center gap-2">
-                      <span className="grid size-8 place-items-center rounded-full bg-[#2037d8] font-mono text-xs font-bold text-white">
-                        {number}
+                  ['Process Flow', 'Assess → Design → Deploy → Scale'],
+                  ['KPI Signal', 'Reliability · Adoption · Efficiency · Risk'],
+                  ['Outcome View', 'Roadmap · Ownership · Business impact'],
+                ].map(([label, value], index) => {
+                  const Icon = processSummaryIcons[index] ?? CheckCircle2;
+
+                  return (
+                  <div key={label} className="group border border-[#2037d8]/16 bg-[#071223] p-4 text-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#c8ff1a]/55 hover:bg-[#10214a] hover:shadow-xl hover:shadow-[#2037d8]/20">
+                    <div className="mb-3 flex items-center justify-between gap-2">
+                      <span className="grid size-9 place-items-center rounded-full bg-[#c8ff1a] text-[#071223] transition duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#c8ff1a]/25">
+                        <Icon className="size-4 transition duration-300 group-hover:-rotate-6" />
                       </span>
-                      {index < 2 && <ArrowRight className="hidden size-4 text-[#2037d8] sm:block" />}
+                      {index < 2 && <ArrowRight className="hidden size-4 text-[#c8ff1a] transition duration-300 group-hover:translate-x-1 sm:block" />}
                     </div>
-                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#2037d8]">{label}</p>
-                    <p className="mt-2 text-sm font-semibold leading-5 text-[#071223]">{value}</p>
+                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#c8ff1a]">{label}</p>
+                    <p className="mt-2 text-sm font-semibold leading-5 text-white/86">{value}</p>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 
             <div className="border border-[#2037d8]/18 bg-white p-5 shadow-xl shadow-[#2037d8]/10">
-              <div className="mb-4 grid gap-3 bg-[#f8fbff] p-3 sm:grid-cols-3">
+              <div className="mb-5 border border-[#2037d8]/12 bg-[#f8fbff]">
+                <div className="border-b border-[#2037d8]/12 bg-white px-4 py-2">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#2037d8]">
+                    Engagement Pipeline
+                  </p>
+                </div>
+                <div className="grid gap-0 md:grid-cols-[1fr_36px_1fr_36px_1fr] md:items-stretch">
                 {[
                   ['Input', 'Current stack, people, risk, priorities'],
                   ['Method', 'Assess, design, deploy, scale'],
                   ['Output', 'Measured roadmap and accountable delivery'],
-                ].map(([label, value]) => (
-                  <div key={label} className="border border-[#2037d8]/12 bg-white px-4 py-3">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#2037d8]">{label}</p>
-                    <p className="mt-1 text-sm font-semibold text-[#071223]">{value}</p>
+                ].map(([label, value], index) => (
+                  <div key={label} className="contents">
+                    <div className="group bg-white px-4 py-3 transition duration-300 hover:bg-[#eef8fc] hover:shadow-inner">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#2037d8]">{label}</p>
+                      <p className="mt-1 text-sm font-semibold text-[#071223] transition duration-300 group-hover:text-[#2037d8]">{value}</p>
+                    </div>
+                    {index < 2 && (
+                      <div className="group grid place-items-center border-y border-[#2037d8]/10 bg-[#eef8fc] transition duration-300 hover:bg-[#2037d8] md:border-x md:border-y-0">
+                        <ArrowRight className="size-5 rotate-90 text-[#2037d8] transition duration-300 group-hover:text-white md:rotate-0 md:group-hover:translate-x-1" />
+                      </div>
+                    )}
                   </div>
                 ))}
+                </div>
               </div>
 
               <div className="grid gap-3 lg:grid-cols-[1fr_36px_1fr_36px_1fr_36px_1fr] lg:items-center">
@@ -473,11 +493,11 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
 
                   return (
                     <div key={step.phase} className="contents">
-                      <article className="group overflow-hidden border border-[#2037d8]/14 bg-[#f8fbff] shadow-sm transition hover:-translate-y-1 hover:border-[#2037d8]/40 hover:shadow-xl hover:shadow-[#2037d8]/10">
-                        <div className={`h-2 ${processAccentClasses[index]}`} />
+                      <article className="group overflow-hidden border border-[#2037d8]/14 bg-[#f8fbff] shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#2037d8]/50 hover:bg-white hover:shadow-xl hover:shadow-[#2037d8]/12">
+                        <div className={`h-2 ${processAccentClasses[index]} transition duration-300 group-hover:h-3`} />
                         <div className="p-5 text-center">
-                          <span className="mx-auto grid size-12 place-items-center rounded-full bg-white text-[#2037d8] ring-1 ring-[#2037d8]/18">
-                            <Icon className="size-5" />
+                          <span className="mx-auto grid size-12 place-items-center rounded-full bg-white text-[#2037d8] ring-1 ring-[#2037d8]/18 transition duration-300 group-hover:scale-110 group-hover:bg-[#2037d8] group-hover:text-white group-hover:shadow-lg group-hover:shadow-[#2037d8]/20">
+                            <Icon className="size-5 transition duration-300 group-hover:-translate-y-0.5" />
                           </span>
                           <h3 className="mt-4 text-lg font-semibold text-[#071223]">{step.title}</h3>
                           <p className="mt-2 text-sm leading-5 text-muted-foreground">
@@ -487,8 +507,8 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
                       </article>
                       {index < page.processFlow.length - 1 && (
                         <div className="flex items-center justify-center">
-                          <div className="hidden size-9 place-items-center rounded-full border border-[#2037d8]/18 bg-white shadow-sm lg:grid">
-                            <ArrowRight className="size-5 text-[#2037d8]" />
+                          <div className="group hidden size-9 place-items-center rounded-full border border-[#2037d8]/18 bg-white shadow-sm transition duration-300 hover:border-[#2037d8]/45 hover:bg-[#2037d8] lg:grid">
+                            <ArrowRight className="size-5 text-[#2037d8] transition duration-300 group-hover:translate-x-1 group-hover:text-white" />
                           </div>
                           <div className="h-8 w-px bg-[#2037d8]/22 lg:hidden" />
                         </div>
@@ -506,10 +526,10 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
                 </div>
                 <div className="grid gap-0 lg:grid-cols-4">
                   {page.processFlow.map((step, index) => (
-                    <div key={`${step.phase}-measurement`} className="border-b border-[#2037d8]/12 p-4 lg:border-b-0 lg:border-r last:border-r-0">
+                    <div key={`${step.phase}-measurement`} className="group border-b border-[#2037d8]/12 p-4 transition duration-300 hover:bg-white hover:shadow-inner lg:border-b-0 lg:border-r last:border-r-0">
                       <div className="flex items-center gap-2">
-                        <span className={`h-2.5 w-2.5 rounded-full ${processAccentClasses[index]}`} />
-                        <p className="text-sm font-semibold text-[#071223]">{step.kpi}</p>
+                        <span className={`h-2.5 w-2.5 rounded-full ${processAccentClasses[index]} transition duration-300 group-hover:scale-150`} />
+                        <p className="text-sm font-semibold text-[#071223] transition duration-300 group-hover:text-[#2037d8]">{step.kpi}</p>
                       </div>
                       <p className="mt-3 text-xs font-semibold leading-5 text-muted-foreground">
                         {step.outcome}
