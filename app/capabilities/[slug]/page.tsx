@@ -302,24 +302,24 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
         </nav>
       </header>
 
-      <section className="relative overflow-hidden bg-[#071223] text-white">
+      <section className="relative overflow-hidden bg-[#eef8fc] text-foreground">
         {'heroImage' in page && (
           <img
             src={page.heroImage}
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 h-full w-full object-cover opacity-70"
+            className="absolute inset-y-0 right-0 h-full w-full object-cover object-bottom opacity-80 lg:w-[62%]"
           />
         )}
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,18,35,0.96)_0%,rgba(7,18,35,0.86)_44%,rgba(7,18,35,0.58)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,18,35,0.16),rgba(7,18,35,0.9))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,#f8fbff_0%,rgba(248,251,255,0.96)_42%,rgba(248,251,255,0.52)_74%,rgba(248,251,255,0.1)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(238,248,252,0.2),rgba(238,248,252,0.86))]" />
         <div className="absolute inset-x-0 top-0 h-1.5 bg-[linear-gradient(90deg,#00a7d8,#c8ff1a,#2037d8,#e0ab24)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.032)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.032)_1px,transparent_1px)] bg-[size:72px_72px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(32,55,216,0.045)_1px,transparent_1px),linear-gradient(180deg,rgba(32,55,216,0.045)_1px,transparent_1px)] bg-[size:72px_72px]" />
         <div className="relative mx-auto grid max-w-[92rem] gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
           <div>
             <Badge className="mb-4 rounded-lg bg-[#c8ff1a] text-zinc-950">{page.eyebrow}</Badge>
             <h1 className="max-w-4xl text-4xl font-semibold leading-tight sm:text-5xl">{page.title}</h1>
-            <p className="mt-5 max-w-3xl text-base leading-7 text-white/70">{page.description}</p>
+            <p className="mt-5 max-w-3xl text-base leading-7 text-muted-foreground">{page.description}</p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Button
                 nativeButton={false}
@@ -335,17 +335,17 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
                 render={<a href="/public-sector" />}
                 size="lg"
                 variant="outline"
-                className="rounded-lg border-white/24 bg-white/8 text-white hover:bg-white/14"
+                className="rounded-lg border-[#2037d8]/25 bg-white/78 text-[#2037d8] hover:bg-white"
               >
                 Public Sector / M/WBE
               </Button>
             </div>
           </div>
 
-          <div className="border border-white/12 bg-white/[0.055] p-5 shadow-2xl shadow-black/25 backdrop-blur">
-            <div className="flex items-center justify-between border-b border-white/10 pb-4">
+          <div className="border border-[#2037d8]/14 bg-white/82 p-5 shadow-2xl shadow-[#2037d8]/12 backdrop-blur">
+            <div className="flex items-center justify-between border-b border-[#2037d8]/12 pb-4">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c8ff1a]">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#2037d8]">
                   Executive View
                 </p>
                 <h2 className="mt-2 text-xl font-semibold">Operating control plane</h2>
@@ -356,19 +356,19 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
             </div>
             <div className="mt-4 grid gap-3">
               {page.highlights.map((highlight, index) => (
-                <div key={highlight} className="grid grid-cols-[44px_1fr] items-center border border-white/10 bg-black/18 p-3">
-                  <span className="font-mono text-sm font-bold text-[#c8ff1a]">
+                <div key={highlight} className="grid grid-cols-[44px_1fr] items-center border border-[#2037d8]/12 bg-[#f8fbff]/88 p-3">
+                  <span className="font-mono text-sm font-bold text-[#2037d8]">
                     0{index + 1}
                   </span>
-                  <p className="text-sm font-semibold text-white">{highlight}</p>
+                  <p className="text-sm font-semibold text-foreground">{highlight}</p>
                 </div>
               ))}
             </div>
             {'processFlow' in page && (
-              <div className="mt-4 grid grid-cols-3 border border-white/10 bg-black/22 text-center">
+              <div className="mt-4 grid grid-cols-3 border border-[#2037d8]/12 bg-white/86 text-center">
                 {['Assess', 'Deploy', 'Measure'].map((item) => (
-                  <div key={item} className="border-r border-white/10 px-3 py-4 last:border-r-0">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/42">
+                  <div key={item} className="border-r border-[#2037d8]/12 px-3 py-4 last:border-r-0">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
                       Control
                     </p>
                     <p className="mt-1 text-sm font-semibold">{item}</p>
@@ -400,7 +400,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
             </div>
 
             <div className="border border-[#2037d8]/18 bg-[#f8fbff] shadow-xl shadow-[#2037d8]/10">
-              <div className="grid border-b border-[#2037d8]/14 bg-[#071223] text-white lg:grid-cols-[1fr_1fr_1fr_1fr]">
+              <div className="grid border-b border-[#2037d8]/14 bg-[#2037d8] text-white lg:grid-cols-[1fr_1fr_1fr_1fr]">
                 {['Current State', 'Target Design', 'Execution Control', 'Measured Outcomes'].map((label) => (
                   <div key={label} className="border-b border-white/10 px-5 py-4 lg:border-b-0 lg:border-r lg:border-white/10 last:border-r-0">
                     <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#c8ff1a]">
