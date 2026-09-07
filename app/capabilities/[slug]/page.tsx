@@ -1,6 +1,14 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { ArrowRight, CheckCircle2, ChevronDown } from 'lucide-react';
+import {
+  ArrowRight,
+  CheckCircle2,
+  ChevronDown,
+  Network,
+  Rocket,
+  SearchCheck,
+  TrendingUp,
+} from 'lucide-react';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -242,6 +250,8 @@ const processAccentClasses = [
   'bg-[#e0ab24]',
 ];
 
+const processIcons = [SearchCheck, Network, Rocket, TrendingUp];
+
 const kpiScorecard = [
   ['Reliability', '99.8%', 'Target uptime', 'Incidents, recovery, release defects', 'On track'],
   ['Adoption', '3x', 'Faster enablement', 'Usage, readiness, support demand', 'Improving'],
@@ -458,42 +468,55 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
               </div>
 
               <div className="grid gap-3 lg:grid-cols-[1fr_36px_1fr_36px_1fr_36px_1fr] lg:items-center">
-                {page.processFlow.map((step, index) => (
-                  <div key={step.phase} className="contents">
-                    <article className="group overflow-hidden border border-[#2037d8]/14 bg-[#f8fbff] shadow-sm transition hover:-translate-y-1 hover:border-[#2037d8]/40 hover:shadow-xl hover:shadow-[#2037d8]/10">
-                      <div className={`h-2 ${processAccentClasses[index]}`} />
-                      <div className="p-5 text-center">
-                        <span className="mx-auto grid size-12 place-items-center rounded-full bg-white font-mono text-sm font-bold text-[#2037d8] ring-1 ring-[#2037d8]/18">
-                          {step.phase}
-                        </span>
-                        <h3 className="mt-4 text-lg font-semibold text-[#071223]">{step.title}</h3>
-                        <p className="mt-2 text-sm leading-5 text-muted-foreground">
-                          {step.copy}
-                        </p>
-                      </div>
-                    </article>
-                    {index < page.processFlow.length - 1 && (
-                      <div className="flex items-center justify-center">
-                        <div className="hidden size-9 place-items-center rounded-full border border-[#2037d8]/18 bg-white shadow-sm lg:grid">
-                          <ArrowRight className="size-5 text-[#2037d8]" />
+                {page.processFlow.map((step, index) => {
+                  const Icon = processIcons[index] ?? CheckCircle2;
+
+                  return (
+                    <div key={step.phase} className="contents">
+                      <article className="group overflow-hidden border border-[#2037d8]/14 bg-[#f8fbff] shadow-sm transition hover:-translate-y-1 hover:border-[#2037d8]/40 hover:shadow-xl hover:shadow-[#2037d8]/10">
+                        <div className={`h-2 ${processAccentClasses[index]}`} />
+                        <div className="p-5 text-center">
+                          <span className="mx-auto grid size-12 place-items-center rounded-full bg-white text-[#2037d8] ring-1 ring-[#2037d8]/18">
+                            <Icon className="size-5" />
+                          </span>
+                          <h3 className="mt-4 text-lg font-semibold text-[#071223]">{step.title}</h3>
+                          <p className="mt-2 text-sm leading-5 text-muted-foreground">
+                            {step.copy}
+                          </p>
                         </div>
-                        <div className="h-8 w-px bg-[#2037d8]/22 lg:hidden" />
-                      </div>
-                    )}
-                  </div>
-                ))}
+                      </article>
+                      {index < page.processFlow.length - 1 && (
+                        <div className="flex items-center justify-center">
+                          <div className="hidden size-9 place-items-center rounded-full border border-[#2037d8]/18 bg-white shadow-sm lg:grid">
+                            <ArrowRight className="size-5 text-[#2037d8]" />
+                          </div>
+                          <div className="h-8 w-px bg-[#2037d8]/22 lg:hidden" />
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
 
-              <div className="mt-5 grid gap-3 lg:grid-cols-4">
-                {page.processFlow.map((step) => (
-                  <div key={`${step.phase}-measurement`} className="border border-[#2037d8]/12 bg-[#f8fbff] p-4">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#486000]">KPI</p>
-                    <p className="mt-1 text-sm font-semibold text-[#071223]">{step.kpi}</p>
-                    <p className="mt-3 border-t border-[#2037d8]/10 pt-3 text-xs font-semibold leading-5 text-muted-foreground">
-                      {step.outcome}
-                    </p>
-                  </div>
-                ))}
+              <div className="mt-5 border border-[#2037d8]/12 bg-[#f8fbff]">
+                <div className="border-b border-[#2037d8]/12 bg-white px-4 py-3">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#2037d8]">
+                    Measurement Track
+                  </p>
+                </div>
+                <div className="grid gap-0 lg:grid-cols-4">
+                  {page.processFlow.map((step, index) => (
+                    <div key={`${step.phase}-measurement`} className="border-b border-[#2037d8]/12 p-4 lg:border-b-0 lg:border-r last:border-r-0">
+                      <div className="flex items-center gap-2">
+                        <span className={`h-2.5 w-2.5 rounded-full ${processAccentClasses[index]}`} />
+                        <p className="text-sm font-semibold text-[#071223]">{step.kpi}</p>
+                      </div>
+                      <p className="mt-3 text-xs font-semibold leading-5 text-muted-foreground">
+                        {step.outcome}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
