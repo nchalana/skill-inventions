@@ -538,28 +538,46 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
                 </div>
               </div>
 
-              <div className="grid gap-0 md:grid-cols-2 xl:grid-cols-4">
-                {kpiScorecard.map(([title, metric, label, scope, status], index) => (
-                  <article key={title} className="border-b border-[#2037d8]/12 p-5 md:border-r xl:border-b-0 last:border-r-0">
-                    <div className="mb-4 flex items-start justify-between gap-3">
-                      <div>
-                        <p className="text-sm font-semibold text-[#2037d8]">{title}</p>
-                        <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground">
-                          {status}
-                        </p>
+              <div className="grid lg:grid-cols-[0.72fr_1.28fr]">
+                <div className="relative min-h-72 overflow-hidden border-b border-[#2037d8]/12 lg:border-b-0 lg:border-r">
+                  <img
+                    src="/technology-ecosystem-growth-kpi.png"
+                    alt="Growth KPI visualization"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,18,35,0.08),rgba(7,18,35,0.72))]" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#c8ff1a]">
+                      Scorecard lens
+                    </p>
+                    <p className="mt-2 text-xl font-semibold leading-tight">
+                      Progress stakeholders can see without reading a long report.
+                    </p>
+                  </div>
+                </div>
+                <div className="grid gap-0 md:grid-cols-2 xl:grid-cols-4">
+                  {kpiScorecard.map(([title, metric, label, scope, status], index) => (
+                    <article key={title} className="border-b border-[#2037d8]/12 p-5 md:border-r xl:border-b-0 last:border-r-0">
+                      <div className="mb-4 flex items-start justify-between gap-3">
+                        <div>
+                          <p className="text-sm font-semibold text-[#2037d8]">{title}</p>
+                          <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground">
+                            {status}
+                          </p>
+                        </div>
+                        <span className={`h-3 w-3 rounded-full ${processAccentClasses[index]}`} />
                       </div>
-                      <span className={`h-3 w-3 rounded-full ${processAccentClasses[index]}`} />
-                    </div>
-                    <div className="flex items-end gap-2">
-                      <p className="text-4xl font-semibold leading-none text-[#071223]">{metric}</p>
-                      <p className="pb-1 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">{label}</p>
-                    </div>
-                    <div className="mt-4 h-2 overflow-hidden bg-[#eef8fc]">
-                      <div className={`h-full ${processAccentClasses[index]}`} style={{ width: `${88 - index * 9}%` }} />
-                    </div>
-                    <p className="mt-4 text-xs leading-5 text-muted-foreground">{scope}</p>
-                  </article>
-                ))}
+                      <div className="flex items-end gap-2">
+                        <p className="text-4xl font-semibold leading-none text-[#071223]">{metric}</p>
+                        <p className="pb-1 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">{label}</p>
+                      </div>
+                      <div className="mt-4 h-2 overflow-hidden bg-[#eef8fc]">
+                        <div className={`h-full ${processAccentClasses[index]}`} style={{ width: `${88 - index * 9}%` }} />
+                      </div>
+                      <p className="mt-4 text-xs leading-5 text-muted-foreground">{scope}</p>
+                    </article>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -569,14 +587,26 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
       {'mastery' in page && (
         <section className="border-b border-border bg-[#f7f8f4]">
           <div className="mx-auto grid max-w-[92rem] gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[0.88fr_1.12fr] lg:px-8">
-            <div className="border border-[#071223]/10 bg-white p-6 shadow-lg shadow-black/5">
-              <Badge className="mb-4 rounded-lg bg-[#071223] text-white">
-                Practice Framework
-              </Badge>
-              <h2 className="text-2xl font-semibold leading-tight sm:text-3xl">
-                {page.mastery.title}
-              </h2>
-              <p className="mt-4 text-sm leading-6 text-muted-foreground">{page.mastery.copy}</p>
+            <div className="overflow-hidden border border-[#071223]/10 bg-white shadow-lg shadow-black/5">
+              <div className="relative h-52">
+                <img
+                  src="/technology-ecosystem-human.png"
+                  alt="Human-centered technology practice"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.95),rgba(255,255,255,0.56),rgba(255,255,255,0.04))]" />
+                <div className="relative p-5">
+                  <Badge className="rounded-lg bg-[#071223] text-white">
+                    Practice Framework
+                  </Badge>
+                </div>
+              </div>
+              <div className="p-6">
+                <h2 className="text-2xl font-semibold leading-tight sm:text-3xl">
+                  {page.mastery.title}
+                </h2>
+                <p className="mt-4 text-sm leading-6 text-muted-foreground">{page.mastery.copy}</p>
+              </div>
             </div>
 
             <div className="grid gap-3 sm:grid-cols-2">
@@ -623,23 +653,33 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
       )}
 
       <section className="border-b border-border bg-white">
-        <div className="mx-auto max-w-[92rem] px-4 py-10 sm:px-6 lg:px-8">
-          <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <Badge variant="outline" className="mb-2 rounded-lg">What We Cover</Badge>
-              <h2 className="text-2xl font-semibold">Focused services, matched to real delivery needs.</h2>
+        <div className="mx-auto grid max-w-[92rem] gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:px-8">
+          <div className="overflow-hidden border border-[#2037d8]/14 bg-[#071223] text-white shadow-xl shadow-[#2037d8]/12">
+            {'processFlow' in page && (
+              <img
+                src="/technology-ecosystem-code.png"
+                alt="Enterprise code and platform engineering visual"
+                className="aspect-[16/10] w-full object-cover"
+              />
+            )}
+            <div className="p-5">
+              <Badge className="mb-4 rounded-lg bg-[#c8ff1a] text-zinc-950">What We Cover</Badge>
+              <h2 className="text-2xl font-semibold leading-tight">Focused services, matched to real delivery needs.</h2>
+              <p className="mt-3 text-sm leading-6 text-white/68">
+                The ecosystem brings application engineering, enterprise systems,
+                delivery tooling, and experience design into one operating view.
+              </p>
             </div>
-            <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
-              Each capability page keeps the public website simple while giving hiring managers,
-              technology leaders, and partners a clear path to request the right support.
-            </p>
           </div>
 
-          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-            {page.services.map(([title, copy]) => (
-              <article key={title} className="rounded-lg border border-border bg-[#f7f8f4] p-4 shadow-sm">
-                <h3 className="text-sm font-semibold text-[#2037d8]">{title}</h3>
-                <p className="mt-2 text-xs leading-5 text-muted-foreground">{copy}</p>
+          <div className="grid gap-3 md:grid-cols-2">
+            {page.services.map(([title, copy], index) => (
+              <article key={title} className="border border-border bg-[#f7f8f4] p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#2037d8]/35 hover:bg-white hover:shadow-xl hover:shadow-[#2037d8]/8">
+                <div className="mb-4 flex items-center gap-3">
+                  <span className={`h-3 w-3 rounded-full ${processAccentClasses[index % processAccentClasses.length]}`} />
+                  <h3 className="text-sm font-semibold text-[#2037d8]">{title}</h3>
+                </div>
+                <p className="text-xs leading-5 text-muted-foreground">{copy}</p>
               </article>
             ))}
           </div>
@@ -649,12 +689,19 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
       {'evidenceTracks' in page && (
         <section className="border-b border-border bg-[#f7f8f4]">
           <div className="mx-auto grid max-w-[92rem] gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[0.7fr_1.3fr] lg:px-8">
-            <div>
+            <div className="overflow-hidden border border-[#2037d8]/14 bg-white shadow-sm">
+              <img
+                src="/technology-ecosystem-validation.png"
+                alt="Validation and quality score visual"
+                className="aspect-[16/9] w-full object-cover"
+              />
+              <div className="p-5">
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2037d8]">Evidence assets</p>
               <h2 className="mt-2 text-2xl font-semibold leading-tight">Case studies and whitepapers should prove the framework, not decorate the page.</h2>
               <p className="mt-3 text-sm leading-6 text-muted-foreground">
                 As client-approved material becomes available, this section can hold downloadable proof around process, KPI movement, and delivery outcomes.
               </p>
+              </div>
             </div>
             <div className="grid gap-3 md:grid-cols-3">
               {page.evidenceTracks.map(([title, copy]) => (
