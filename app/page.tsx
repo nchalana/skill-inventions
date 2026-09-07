@@ -1215,8 +1215,8 @@ export default function Home() {
       </section>
 
       <footer id="contact" className="scroll-mt-24 border-t border-[#2037d8]/20 bg-[#08111f] text-white">
-        <div className="mx-auto max-w-[92rem] px-4 py-8 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-5 border-b border-white/10 pb-6 lg:flex-row lg:items-center lg:justify-between">
+        <div className="mx-auto max-w-[92rem] px-4 py-5 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-4 border-b border-white/10 pb-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <span className="grid h-11 w-48 place-items-center overflow-hidden">
                 <img
@@ -1253,7 +1253,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid gap-7 py-7 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 py-5 sm:grid-cols-2 lg:grid-cols-4">
             {footerColumns.map((column) => (
               <div key={column.title}>
                 <h3 className="text-xs font-bold uppercase tracking-[0.16em] text-[#c8ff1a]">{column.title}</h3>
@@ -1270,7 +1270,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="grid gap-3 border-t border-white/10 py-5 lg:flex">
+          <div className="grid gap-3 border-t border-white/10 py-4 lg:flex">
             {officeLocations.map((office) => (
               <div key={office.region} className={`rounded-lg border border-white/10 bg-white/[0.04] p-3 ${office.cardClass}`}>
                 <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#c8ff1a]">{office.region}</p>
@@ -1280,7 +1280,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="flex flex-col gap-4 border-t border-white/10 pt-5 text-xs text-white/50 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-col gap-3 border-t border-white/10 pt-4 text-xs text-white/50 lg:flex-row lg:items-center lg:justify-between">
             <p>© 2026 Skill Inventions Inc. All rights reserved.</p>
             <div className="flex flex-wrap gap-x-4 gap-y-2">
               {['Privacy Policy', 'Terms of Service', 'Regional Data Disclosure', 'Cookie Settings'].map((link) => (

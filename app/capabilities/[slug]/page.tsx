@@ -346,12 +346,12 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(238,248,252,0.2),rgba(238,248,252,0.86))]" />
         <div className="absolute inset-x-0 top-0 h-1.5 bg-[linear-gradient(90deg,#00a7d8,#c8ff1a,#2037d8,#e0ab24)]" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(32,55,216,0.045)_1px,transparent_1px),linear-gradient(180deg,rgba(32,55,216,0.045)_1px,transparent_1px)] bg-[size:72px_72px]" />
-        <div className="relative mx-auto grid max-w-[92rem] gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+        <div className="relative mx-auto grid max-w-[92rem] gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
           <div>
             <Badge className="mb-4 rounded-lg bg-[#c8ff1a] text-zinc-950">{page.eyebrow}</Badge>
             <h1 className="max-w-4xl text-4xl font-semibold leading-tight sm:text-5xl">{page.title}</h1>
             <p className="mt-5 max-w-3xl text-base leading-7 text-muted-foreground">{page.description}</p>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <Button
                 nativeButton={false}
                 render={<a href="mailto:hello@skillinventions.com?subject=Skill%20Inventions%20capability%20request" />}
@@ -373,7 +373,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
             </div>
           </div>
 
-          <div className="relative pb-6">
+          <div className="relative pb-5">
             {'heroVisuals' in page && (
               <div className="grid gap-3">
                 <div className="relative overflow-hidden border border-white bg-white p-2 shadow-2xl shadow-[#2037d8]/18">
@@ -425,8 +425,8 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
 
       {'processFlow' in page && (
         <section className="overflow-hidden border-b border-border bg-white">
-          <div className="mx-auto max-w-[92rem] px-4 py-10 sm:px-6 lg:px-8">
-            <div className="mb-6 grid gap-4 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
+          <div className="mx-auto max-w-[92rem] px-4 py-7 sm:px-6 lg:px-8">
+            <div className="mb-4 grid gap-4 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
               <div>
                 <Badge variant="outline" className="mb-2 rounded-lg border-[#2037d8]/25 bg-white">
                   Practice Operating Model
@@ -459,8 +459,8 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
               </div>
             </div>
 
-            <div className="border border-[#2037d8]/18 bg-white p-5 shadow-xl shadow-[#2037d8]/10">
-              <div className="mb-5 border border-[#2037d8]/12 bg-[#f8fbff]">
+            <div className="border border-[#2037d8]/18 bg-white p-4 shadow-xl shadow-[#2037d8]/10">
+              <div className="mb-4 border border-[#2037d8]/12 bg-[#f8fbff]">
                 <div className="border-b border-[#2037d8]/12 bg-white px-4 py-2">
                   <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#2037d8]">
                     Engagement Pipeline
@@ -495,7 +495,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
                     <div key={step.phase} className="contents">
                       <article className="group overflow-hidden border border-[#2037d8]/14 bg-[#f8fbff] shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#2037d8]/50 hover:bg-white hover:shadow-xl hover:shadow-[#2037d8]/12">
                         <div className={`h-2 ${processAccentClasses[index]} transition duration-300 group-hover:h-3`} />
-                        <div className="p-5 text-center">
+                        <div className="p-4 text-center">
                           <span className="mx-auto grid size-12 place-items-center rounded-full bg-white text-[#2037d8] ring-1 ring-[#2037d8]/18 transition duration-300 group-hover:scale-110 group-hover:bg-[#2037d8] group-hover:text-white group-hover:shadow-lg group-hover:shadow-[#2037d8]/20">
                             <Icon className="size-5 transition duration-300 group-hover:-translate-y-0.5" />
                           </span>
@@ -518,7 +518,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
                 })}
               </div>
 
-              <div className="mt-5 border border-[#2037d8]/12 bg-[#f8fbff]">
+              <div className="mt-4 border border-[#2037d8]/12 bg-[#f8fbff]">
                 <div className="border-b border-[#2037d8]/12 bg-white px-4 py-3">
                   <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#2037d8]">
                     Measurement Track
@@ -526,7 +526,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
                 </div>
                 <div className="grid gap-0 lg:grid-cols-4">
                   {page.processFlow.map((step, index) => (
-                    <div key={`${step.phase}-measurement`} className="group border-b border-[#2037d8]/12 p-4 transition duration-300 hover:bg-white hover:shadow-inner lg:border-b-0 lg:border-r last:border-r-0">
+                    <div key={`${step.phase}-measurement`} className="group border-b border-[#2037d8]/12 p-3 transition duration-300 hover:bg-white hover:shadow-inner lg:border-b-0 lg:border-r last:border-r-0">
                       <div className="flex items-center gap-2">
                         <span className={`h-2.5 w-2.5 rounded-full ${processAccentClasses[index]} transition duration-300 group-hover:scale-150`} />
                         <p className="text-sm font-semibold text-[#071223] transition duration-300 group-hover:text-[#2037d8]">{step.kpi}</p>
@@ -540,8 +540,8 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
               </div>
             </div>
 
-            <div className="mt-5 border border-[#2037d8]/14 bg-white shadow-lg shadow-[#2037d8]/8">
-              <div className="flex flex-col gap-4 border-b border-[#2037d8]/12 bg-[#071223] p-5 text-white lg:flex-row lg:items-center lg:justify-between">
+            <div className="mt-4 border border-[#2037d8]/14 bg-white shadow-lg shadow-[#2037d8]/8">
+              <div className="flex flex-col gap-3 border-b border-[#2037d8]/12 bg-[#071223] p-4 text-white lg:flex-row lg:items-center lg:justify-between">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#c8ff1a]">
                     KPI Governance Scorecard
@@ -566,7 +566,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
                     className="absolute inset-0 h-full w-full object-cover"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,18,35,0.08),rgba(7,18,35,0.72))]" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                     <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#c8ff1a]">
                       Scorecard lens
                     </p>
@@ -577,7 +577,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
                 </div>
                 <div className="grid gap-0 md:grid-cols-2 xl:grid-cols-4">
                   {kpiScorecard.map(([title, metric, label, scope, status], index) => (
-                    <article key={title} className="border-b border-[#2037d8]/12 p-5 md:border-r xl:border-b-0 last:border-r-0">
+                    <article key={title} className="border-b border-[#2037d8]/12 p-4 md:border-r xl:border-b-0 last:border-r-0">
                       <div className="mb-4 flex items-start justify-between gap-3">
                         <div>
                           <p className="text-sm font-semibold text-[#2037d8]">{title}</p>
@@ -606,7 +606,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
 
       {'mastery' in page && (
         <section className="border-b border-border bg-[#f7f8f4]">
-          <div className="mx-auto grid max-w-[92rem] gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[0.88fr_1.12fr] lg:px-8">
+          <div className="mx-auto grid max-w-[92rem] gap-5 px-4 py-7 sm:px-6 lg:grid-cols-[0.88fr_1.12fr] lg:px-8">
             <div className="overflow-hidden border border-[#071223]/10 bg-white shadow-lg shadow-black/5">
               <div className="relative h-52">
                 <img
@@ -615,13 +615,13 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
                   className="absolute inset-0 h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.95),rgba(255,255,255,0.56),rgba(255,255,255,0.04))]" />
-                <div className="relative p-5">
+                <div className="relative p-4">
                   <Badge className="rounded-lg bg-[#071223] text-white">
                     Practice Framework
                   </Badge>
                 </div>
               </div>
-              <div className="p-6">
+              <div className="p-5">
                 <h2 className="text-2xl font-semibold leading-tight sm:text-3xl">
                   {page.mastery.title}
                 </h2>
@@ -648,7 +648,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
 
       {'industries' in page && (
         <section className="border-b border-border bg-[#eef8fc]">
-          <div className="mx-auto max-w-[92rem] px-4 py-10 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[92rem] px-4 py-7 sm:px-6 lg:px-8">
             <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <Badge variant="outline" className="mb-2 rounded-lg border-[#2037d8]/25 bg-white">
@@ -673,7 +673,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
       )}
 
       <section className="border-b border-border bg-white">
-        <div className="mx-auto grid max-w-[92rem] gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:px-8">
+        <div className="mx-auto grid max-w-[92rem] gap-5 px-4 py-7 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:px-8">
           <div className="overflow-hidden border border-[#2037d8]/14 bg-[#071223] text-white shadow-xl shadow-[#2037d8]/12">
             {'processFlow' in page && (
               <img
@@ -682,7 +682,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
                 className="aspect-[16/10] w-full object-cover"
               />
             )}
-            <div className="p-5">
+            <div className="p-4">
               <Badge className="mb-4 rounded-lg bg-[#c8ff1a] text-zinc-950">What We Cover</Badge>
               <h2 className="text-2xl font-semibold leading-tight">Focused services, matched to real delivery needs.</h2>
               <p className="mt-3 text-sm leading-6 text-white/68">
@@ -694,7 +694,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
 
           <div className="grid gap-3 md:grid-cols-2">
             {page.services.map(([title, copy], index) => (
-              <article key={title} className="border border-border bg-[#f7f8f4] p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#2037d8]/35 hover:bg-white hover:shadow-xl hover:shadow-[#2037d8]/8">
+              <article key={title} className="border border-border bg-[#f7f8f4] p-4 shadow-sm transition hover:-translate-y-1 hover:border-[#2037d8]/35 hover:bg-white hover:shadow-xl hover:shadow-[#2037d8]/8">
                 <div className="mb-4 flex items-center gap-3">
                   <span className={`h-3 w-3 rounded-full ${processAccentClasses[index % processAccentClasses.length]}`} />
                   <h3 className="text-sm font-semibold text-[#2037d8]">{title}</h3>
@@ -708,14 +708,14 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
 
       {'evidenceTracks' in page && (
         <section className="border-b border-border bg-[#f7f8f4]">
-          <div className="mx-auto grid max-w-[92rem] gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[0.7fr_1.3fr] lg:px-8">
+          <div className="mx-auto grid max-w-[92rem] gap-5 px-4 py-7 sm:px-6 lg:grid-cols-[0.7fr_1.3fr] lg:px-8">
             <div className="overflow-hidden border border-[#2037d8]/14 bg-white shadow-sm">
               <img
                 src="/technology-ecosystem-validation.png"
                 alt="Validation and quality score visual"
                 className="aspect-[16/9] w-full object-cover"
               />
-              <div className="p-5">
+              <div className="p-4">
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2037d8]">Evidence assets</p>
               <h2 className="mt-2 text-2xl font-semibold leading-tight">Case studies and whitepapers should prove the framework, not decorate the page.</h2>
               <p className="mt-3 text-sm leading-6 text-muted-foreground">
@@ -737,7 +737,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
 
       {'processFlow' in page && (
         <section className="bg-[#eef8fc]">
-        <div className="mx-auto grid max-w-[92rem] gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+        <div className="mx-auto grid max-w-[92rem] gap-5 px-4 py-7 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--si-violet)]">Expected value</p>
             <h2 className="mt-2 text-2xl font-semibold leading-tight">Less browsing. More qualified conversations.</h2>
@@ -755,8 +755,8 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
       )}
 
       <footer id="contact" className="border-t border-[#2037d8]/20 bg-[#08111f] text-white">
-        <div className="mx-auto max-w-[92rem] px-4 py-8 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-5 border-b border-white/10 pb-6 lg:flex-row lg:items-center lg:justify-between">
+        <div className="mx-auto max-w-[92rem] px-4 py-5 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-4 border-b border-white/10 pb-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <span className="grid h-11 w-48 place-items-center overflow-hidden">
                 <img src="/skill-inventions-logo-footer.svg" alt="Skill Inventions logo" className="h-full w-full object-contain" />
@@ -782,7 +782,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
             </div>
           </div>
 
-          <div className="grid gap-7 py-7 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 py-5 sm:grid-cols-2 lg:grid-cols-4">
             {footerColumns.map((column) => (
               <div key={column.title}>
                 <h3 className="text-xs font-bold uppercase tracking-[0.16em] text-[#c8ff1a]">{column.title}</h3>
@@ -799,7 +799,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
             ))}
           </div>
 
-          <div className="grid gap-3 border-t border-white/10 py-5 lg:grid-cols-3">
+          <div className="grid gap-3 border-t border-white/10 py-4 lg:grid-cols-3">
             {officeLocations.map(([region, office, address]) => (
               <div key={region} className="rounded-lg border border-white/10 bg-white/[0.04] p-3">
                 <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#c8ff1a]">{region}</p>
@@ -809,7 +809,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
             ))}
           </div>
 
-          <div className="flex flex-col gap-4 border-t border-white/10 pt-5 text-xs text-white/50 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-col gap-3 border-t border-white/10 pt-4 text-xs text-white/50 lg:flex-row lg:items-center lg:justify-between">
             <p>© 2026 Skill Inventions Inc. All rights reserved.</p>
             <div className="flex flex-wrap gap-x-4 gap-y-2">
               {['Privacy Policy', 'Terms of Service', 'Regional Data Disclosure', 'Cookie Settings'].map((link) => (
