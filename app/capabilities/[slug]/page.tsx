@@ -66,12 +66,12 @@ const capabilityPages = {
     eyebrow: 'Capability / Security & Trust Infrastructure',
     title: 'Security, identity, verification, and human review before risk reaches production.',
     description:
-      'Skill Inventions helps teams strengthen cybersecurity posture while WackoWave adds document, resume, credential, and decision-support verification.',
-    highlights: ['Endpoint and cloud security', 'IAM and compliance support', 'WackoWave verification layer'],
+      'Skill Inventions helps teams strengthen cybersecurity posture while Platform Intelligence adds document, resume, credential, and decision-support verification.',
+    highlights: ['Endpoint and cloud security', 'IAM and compliance support', 'Platform Intelligence verification layer'],
     services: [
       ['Cybersecurity engineering', 'Endpoint security, EDR, hardening, vulnerability response, SOC support, and threat review.'],
       ['Identity and access', 'IDM/IAM, Microsoft 365, policy controls, audit readiness, and secure operating standards.'],
-      ['WackoWave Platform Intelligence', 'Resume, credential, timeline, AI-language, visual forensics, and semantic coherence screening.'],
+      ['Platform Intelligence', 'Resume, credential, timeline, AI-language, visual forensics, and semantic coherence screening.'],
       ['Document Verification System', 'KYC, claims, tenant, vendor, and provider credential checks against the SOP your team already uses.'],
     ],
     outcomes: ['Earlier risk signals', 'Human-reviewed decision support', 'Cleaner compliance and verification workflows'],

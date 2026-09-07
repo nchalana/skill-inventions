@@ -5,9 +5,9 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'WackoWave Platform Intelligence | Skill Inventions',
+  title: 'Platform Intelligence | Skill Inventions',
   description:
-    'WackoWave Platform Intelligence is a decision-support and forensic verification system for resumes, documents, credentials, and hiring workflows.',
+    'Platform Intelligence is a decision-support and forensic verification system for resumes, documents, credentials, and hiring workflows.',
 };
 
 const engines = [
@@ -34,7 +34,7 @@ export default function PlatformIntelligencePage() {
           </a>
           <Button
             nativeButton={false}
-            render={<a href="mailto:info@skillinventions.com?subject=WackoWave%20Platform%20Intelligence%20Demo" />}
+            render={<a href="mailto:info@skillinventions.com?subject=Platform%20Intelligence%20Demo" />}
             className="rounded-full bg-[#2037d8] text-white hover:bg-[#172db8]"
           >
             Request Demo
@@ -46,20 +46,20 @@ export default function PlatformIntelligencePage() {
         <div className="absolute inset-x-0 top-0 h-1.5 bg-[linear-gradient(90deg,#00a7d8,#c8ff1a,#2037d8,#e0ab24)]" />
         <div className="mx-auto grid max-w-[92rem] gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:px-8">
           <div>
-            <Badge className="mb-4 rounded-lg bg-[#c8ff1a] text-zinc-950">WackoWave Platform Intelligence</Badge>
+            <Badge className="mb-4 rounded-lg bg-[#c8ff1a] text-zinc-950">Platform Intelligence</Badge>
             <h1 className="max-w-3xl text-4xl font-semibold leading-tight sm:text-5xl">
               Matching is not validation.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-white/72">
               Most AI resume matching software behaves like a faster Ctrl+F:
-              job description versus resume. WackoWave adds a forensic trust
+              job description versus resume. Platform Intelligence adds a forensic trust
               layer before resumes, documents, and credentials enter hiring
               workflows or enterprise databases.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Button
                 nativeButton={false}
-                render={<a href="mailto:info@skillinventions.com?subject=WackoWave%20Platform%20Intelligence%20Demo" />}
+                render={<a href="mailto:info@skillinventions.com?subject=Platform%20Intelligence%20Demo" />}
                 size="lg"
                 className="rounded-lg bg-[#c8ff1a] text-zinc-950 shadow-lg shadow-lime-400/15 hover:bg-[#d6ff45]"
               >
@@ -68,20 +68,20 @@ export default function PlatformIntelligencePage() {
               </Button>
               <Button
                 nativeButton={false}
-                render={<a href="/#wackowave" />}
+                render={<a href="/#platform-intelligence" />}
                 size="lg"
                 variant="outline"
                 className="rounded-lg border-white/24 bg-white/8 text-white hover:bg-white/14"
               >
-                Back to WackoWave
+                Back to Platform Intelligence
               </Button>
             </div>
           </div>
 
           <div className="rounded-2xl border border-white/12 bg-white/[0.06] p-3 shadow-2xl shadow-black/25">
             <img
-              src="/wackowave-to-be.png"
-              alt="WackoWave unified resume validation and screening command center"
+              src="/platform-intelligence-to-be.png"
+              alt="Unified resume validation and screening command center"
               className="aspect-[16/9] w-full rounded-xl object-cover"
             />
           </div>
@@ -96,7 +96,7 @@ export default function PlatformIntelligencePage() {
               <h2 className="text-2xl font-semibold">From resume flood to verified screening intelligence.</h2>
             </div>
             <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
-              WackoWave helps teams move beyond keyword matching by checking
+              Platform Intelligence helps teams move beyond keyword matching by checking
               consistency, manipulation signals, credential alignment, and
               document coherence before human review time is consumed.
             </p>
@@ -105,7 +105,7 @@ export default function PlatformIntelligencePage() {
           <div className="grid gap-4 lg:grid-cols-2">
             <article className="overflow-hidden rounded-lg border border-border bg-[#f7f8f4] shadow-sm">
               <img
-                src="/wackowave-as-is.png"
+                src="/platform-intelligence-as-is.png"
                 alt="As-is hiring workflow overwhelmed by high-volume resume submissions"
                 className="aspect-[16/9] w-full object-cover"
               />
@@ -122,15 +122,15 @@ export default function PlatformIntelligencePage() {
 
             <article className="overflow-hidden rounded-lg border border-[#2037d8]/20 bg-[#eef8fc] shadow-sm">
               <img
-                src="/wackowave-to-be.png"
-                alt="To-be WackoWave validation workflow with unified screening across sources"
+                src="/platform-intelligence-to-be.png"
+                alt="To-be validation workflow with unified screening across sources"
                 className="aspect-[16/9] w-full object-cover"
               />
               <div className="p-4">
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2037d8]">To-Be</p>
                 <h3 className="mt-2 text-xl font-semibold">Forensic verification before the shortlist.</h3>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                  WackoWave screens incoming profiles and documents, assigns
+                  Platform Intelligence screens incoming profiles and documents, assigns
                   trust signals, and routes the right files into recruiter-ready
                   queues for faster, cleaner human decisions.
                 </p>

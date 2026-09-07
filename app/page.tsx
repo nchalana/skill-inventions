@@ -76,7 +76,7 @@ const journey = [
     industry:
       'AI made basic code, content, and automation cheaper, while increasing risks around quality, trust, security, and governance.',
     pivot:
-      'AI integration, verification, governance, WackoWave trust intelligence, and platform engineering.',
+      'AI integration, verification, governance, Platform Intelligence, and platform engineering.',
     color: 'bg-[var(--si-violet)] text-white',
     image: '',
   },
@@ -86,20 +86,20 @@ const journey = [
     industry:
       'AI agents moved from assistance into action, making validation, auditability, and human review essential.',
     pivot:
-      'WackoWave DVS, JobSearch AI agents, document verification, and decision-ready trust reports.',
+      'Document verification, JobSearch AI agents, trust scoring, and decision-ready reports.',
     color: 'bg-[var(--si-violet)] text-white',
     image: '',
   },
 ];
 
-const wackoWaveTrends = [
+const platformIntelligenceTrends = [
   {
     number: '01',
     title: 'Full-Pipeline Screening',
     trend:
       'External resumes, employment histories, certifications, and documents now enter hiring and business systems faster than teams can manually review.',
     fit:
-      'WackoWave screens files on demand or in API batches of 100-500, returning forensic intelligence in around 30 seconds per file.',
+      'Platform Intelligence screens files on demand or in API batches of 100-500, returning forensic intelligence in around 30 seconds per file.',
   },
   {
     number: '02',
@@ -115,7 +115,7 @@ const wackoWaveTrends = [
     trend:
       'Recruiters and risk teams need quick routing, not another long report buried in the workflow.',
     fit:
-      'WackoWave produces recruiter-readable Trust Scores, job-description match scores, and queues such as Priority Advance, Review Required, or Hold.',
+      'Platform Intelligence produces recruiter-readable Trust Scores, job-description match scores, and queues such as Priority Advance, Review Required, or Hold.',
   },
   {
     number: '04',
@@ -123,7 +123,7 @@ const wackoWaveTrends = [
     trend:
       'Automated rejection creates its own risk when the stakes involve employment, identity, compliance, or vendor approval.',
     fit:
-      'WackoWave flags risk signals and prioritizes queues while final decisions remain with human recruiters, reviewers, or risk officers.',
+      'The platform flags risk signals and prioritizes queues while final decisions remain with human recruiters, reviewers, or risk officers.',
   },
 ];
 
@@ -148,7 +148,7 @@ const dvsSteps = [
 ];
 
 const jobSearchSteps = [
-  ['Connect LinkedIn', 'Sign in once. WackoWave verifies your profile and auto-populates your bench profile without a resume upload.'],
+  ['Connect LinkedIn', 'Sign in once. The platform verifies your profile and auto-populates your bench profile without a resume upload.'],
   ['AI Builds Your Profile', 'Your agent turns LinkedIn data, skills, and target roles into a public bench profile reviewed and live within hours.'],
   ['AI Applies 24 / 7', 'It scans job boards, matches roles by skills and salary, submits applications, and sends a digest of every action taken.'],
 ];
@@ -213,12 +213,12 @@ const navGroups = [
     ],
   },
   {
-    title: 'WackoWave',
+    title: 'Platform Intelligence',
     items: [
       {
         title: 'Platform Intelligence',
         copy: 'Resume, credential, and document forensics for decision support',
-        href: '/wackowave/platform-intelligence',
+        href: '/platform-intelligence',
       },
       {
         title: 'Document Verification System',
@@ -247,7 +247,7 @@ const navGroups = [
       },
       {
         title: 'For Jobseekers',
-        copy: 'Use the WackoWave JobSearch AI Agent to build a profile and apply while you are away',
+        copy: 'Use the JobSearch AI Agent to build a profile and apply while you are away',
         href: '#jobsearch',
       },
       {
@@ -263,7 +263,7 @@ const navGroups = [
       {
         title: 'Human Review Model',
         copy: 'Risk signals are surfaced for people to review, not used for blind rejection',
-        href: '/wackowave/platform-intelligence',
+        href: '/platform-intelligence',
       },
       {
         title: 'Certifications & Verification',
@@ -297,7 +297,7 @@ const navGroups = [
       },
       {
         title: 'Contact',
-        copy: 'Talk to Skill Inventions about technology, talent, or WackoWave',
+        copy: 'Talk to Skill Inventions about technology, talent, or Platform Intelligence',
         href: '/contact',
       },
     ],
@@ -471,9 +471,9 @@ const footerColumns = [
     ],
   },
   {
-    title: 'WackoWave',
+    title: 'Platform Intelligence',
     links: [
-      { label: 'Platform Intelligence', href: '/wackowave/platform-intelligence' },
+      { label: 'Platform Intelligence', href: '/platform-intelligence' },
       { label: 'Document Verification System', href: '#dvs' },
       { label: 'JobSearch AI Agent', href: '#jobsearch' },
       { label: 'Sample Reports', href: '#reports' },
@@ -929,12 +929,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="wackowave" className="scroll-mt-24 border-t border-border bg-[#2037d8] text-white">
+      <section id="platform-intelligence" className="scroll-mt-24 border-t border-border bg-[#2037d8] text-white">
         <div className="mx-auto max-w-[92rem] px-4 py-9 sm:px-6 lg:px-8">
           <div className="mb-5 grid gap-4 lg:grid-cols-[0.72fr_0.78fr_0.5fr] lg:items-end">
             <div>
               <Badge className="mb-3 rounded-lg bg-[#c8ff1a] text-zinc-950">
-                WackoWave by Skill Inventions
+                Platform Intelligence by Skill Inventions
               </Badge>
               <h2 className="max-w-2xl text-2xl font-semibold leading-tight sm:text-3xl">
                 Matching is not validation.
@@ -945,16 +945,16 @@ export default function Home() {
             </div>
             <p className="max-w-3xl text-sm leading-6 text-white/76">
               Most AI resume matching software still behaves like a faster
-              Ctrl+F: job description versus resume. WackoWave Platform
-              Intelligence adds a trust layer for external documents, resumes,
-              credentials, and hiring signals before they enter enterprise
-              databases or reviewer queues.
+              Ctrl+F: job description versus resume. Platform Intelligence
+              adds a trust layer for external documents, resumes, credentials,
+              and hiring signals before they enter enterprise databases or
+              reviewer queues.
             </p>
             <div className="overflow-hidden rounded-lg border border-white/18 bg-black/25 shadow-xl shadow-black/20">
               <iframe
                 className="aspect-video w-full"
                 src="https://www.youtube.com/embed/C8JYPJ9PuLA"
-                title="WackoWave validation video"
+                title="Platform Intelligence validation video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
@@ -962,7 +962,7 @@ export default function Home() {
           </div>
 
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-            {wackoWaveTrends.map((item) => (
+            {platformIntelligenceTrends.map((item) => (
               <article
                 key={item.number}
                 className="rounded-lg border border-white/18 bg-white/[0.08] p-4 shadow-xl shadow-black/10"
@@ -982,7 +982,7 @@ export default function Home() {
                   </p>
                   <p>
                     <span className="block font-semibold uppercase tracking-wide text-[#c8ff1a]">
-                      WackoWave&apos;s fit
+                      Platform fit
                     </span>
                     {item.fit}
                   </p>
@@ -999,7 +999,7 @@ export default function Home() {
             <div className="flex flex-col justify-between rounded-xl border border-[#2037d8]/15 bg-white p-5 shadow-xl shadow-[#2037d8]/10">
               <div>
                 <Badge className="mb-3 rounded-lg bg-[#c8ff1a] text-zinc-950">
-                  WackoWave Product · Document Verification System
+                  Platform Intelligence · Document Verification System
                 </Badge>
                 <h2 className="max-w-2xl text-2xl font-semibold leading-tight sm:text-4xl">
                   Verify any document in 30 seconds. Not 3 days.
@@ -1010,7 +1010,7 @@ export default function Home() {
                   document, compare it to policy, and decide if it is valid.
                 </p>
                 <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                  WackoWave DVS turns your SOP into a verification engine. Upload
+                  DVS turns your SOP into a verification engine. Upload
                   an ID, claim form, lease, or vendor certificate and DVS returns
                   a verified or flagged decision with reasoning attached.
                 </p>
@@ -1086,7 +1086,7 @@ export default function Home() {
             </p>
             <Button
               nativeButton={false}
-              render={<a href="mailto:hello@skillinventions.com?subject=WackoWave%20DVS%20demo" />}
+              render={<a href="mailto:hello@skillinventions.com?subject=Platform%20Intelligence%20DVS%20demo" />}
               size="lg"
               className="h-10 shrink-0 rounded-lg bg-[#2037d8] px-4 text-white shadow-lg shadow-blue-500/15 hover:bg-[#172db8]"
             >
@@ -1103,7 +1103,7 @@ export default function Home() {
             <div className="flex flex-col justify-between">
               <div>
                 <Badge className="mb-3 rounded-lg border border-[#0a66c2]/45 bg-[#0a66c2]/12 text-[#8cc8ff]">
-                  WackoWave - JobSearch AI Agent
+                  Platform Intelligence - JobSearch AI Agent
                 </Badge>
                 <h2 className="max-w-2xl text-2xl font-semibold leading-tight sm:text-4xl">
                   Your jobsearch AI agent never clocks out.
@@ -1182,7 +1182,7 @@ export default function Home() {
           <div className="mb-5 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
             <div>
               <Badge className="mb-2 rounded-lg border border-[#c8ff1a]/30 bg-[#c8ff1a]/10 text-[#c8ff1a]">
-                Sample WackoWave reports
+                Sample Platform Intelligence reports
               </Badge>
               <h2 className="text-xl font-semibold sm:text-2xl">
                 A private, decision-ready candidate verification summary.

@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 export const metadata: Metadata = {
   title: 'Contact Us | Skill Inventions',
   description:
-    'Contact Skill Inventions for AI talent, technology staffing, consulting, WackoWave, public-sector, and partner opportunities.',
+    'Contact Skill Inventions for AI talent, technology staffing, consulting, Platform Intelligence, public-sector, and partner opportunities.',
 };
 
 const contactMethods = [
