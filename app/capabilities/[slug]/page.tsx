@@ -242,6 +242,13 @@ const processAccentClasses = [
   'bg-[#e0ab24]',
 ];
 
+const kpiScorecard = [
+  ['Reliability', '99.8%', 'Target uptime', 'Incidents, recovery, release defects', 'On track'],
+  ['Adoption', '3x', 'Faster enablement', 'Usage, readiness, support demand', 'Improving'],
+  ['Efficiency', '↓', 'Manual effort', 'Cloud spend, automation, cycle time', 'Optimize'],
+  ['Risk', 'Live', 'Control review', 'Security gaps, access, audit evidence', 'Monitored'],
+];
+
 export function generateStaticParams() {
   return Object.keys(capabilityPages).map((slug) => ({ slug }));
 }
@@ -477,22 +484,45 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
               </div>
             </div>
 
-            <div className="mt-5 grid border border-[#2037d8]/14 bg-white lg:grid-cols-[0.85fr_1.15fr]">
-              <div className="border-b border-[#2037d8]/14 p-5 lg:border-b-0 lg:border-r">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2037d8]">
-                  KPI Governance
-                </p>
-                <h3 className="mt-2 text-xl font-semibold text-[#071223]">One scorecard keeps the work accountable.</h3>
-                <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                  The process stays simple at the top. The scorecard tracks the operating signals underneath it.
-                </p>
+            <div className="mt-5 border border-[#2037d8]/14 bg-white shadow-lg shadow-[#2037d8]/8">
+              <div className="flex flex-col gap-4 border-b border-[#2037d8]/12 bg-[#071223] p-5 text-white lg:flex-row lg:items-center lg:justify-between">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#c8ff1a]">
+                    KPI Governance Scorecard
+                  </p>
+                  <h3 className="mt-2 text-xl font-semibold">One scorecard keeps the work accountable.</h3>
+                </div>
+                <div className="grid grid-cols-3 border border-white/12 bg-white/8 text-center">
+                  {['Baseline', 'Weekly Review', 'Executive Readout'].map((label) => (
+                    <div key={label} className="border-r border-white/12 px-4 py-2 last:border-r-0">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-white/48">Cadence</p>
+                      <p className="mt-1 text-xs font-semibold">{label}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="grid sm:grid-cols-4">
-                {page.kpis.map(([title, copy]) => (
-                  <div key={title} className="border-b border-[#2037d8]/12 p-4 sm:border-b-0 sm:border-r last:border-r-0">
-                    <p className="text-sm font-semibold text-[#2037d8]">{title}</p>
-                    <p className="mt-2 text-xs leading-5 text-muted-foreground">{copy}</p>
-                  </div>
+
+              <div className="grid gap-0 md:grid-cols-2 xl:grid-cols-4">
+                {kpiScorecard.map(([title, metric, label, scope, status], index) => (
+                  <article key={title} className="border-b border-[#2037d8]/12 p-5 md:border-r xl:border-b-0 last:border-r-0">
+                    <div className="mb-4 flex items-start justify-between gap-3">
+                      <div>
+                        <p className="text-sm font-semibold text-[#2037d8]">{title}</p>
+                        <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground">
+                          {status}
+                        </p>
+                      </div>
+                      <span className={`h-3 w-3 rounded-full ${processAccentClasses[index]}`} />
+                    </div>
+                    <div className="flex items-end gap-2">
+                      <p className="text-4xl font-semibold leading-none text-[#071223]">{metric}</p>
+                      <p className="pb-1 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">{label}</p>
+                    </div>
+                    <div className="mt-4 h-2 overflow-hidden bg-[#eef8fc]">
+                      <div className={`h-full ${processAccentClasses[index]}`} style={{ width: `${88 - index * 9}%` }} />
+                    </div>
+                    <p className="mt-4 text-xs leading-5 text-muted-foreground">{scope}</p>
+                  </article>
                 ))}
               </div>
             </div>
