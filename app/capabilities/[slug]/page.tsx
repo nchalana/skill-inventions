@@ -301,9 +301,10 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
         </nav>
       </header>
 
-      <section className="relative overflow-hidden bg-[#08111f] text-white">
+      <section className="relative overflow-hidden bg-[#071223] text-white">
         <div className="absolute inset-x-0 top-0 h-1.5 bg-[linear-gradient(90deg,#00a7d8,#c8ff1a,#2037d8,#e0ab24)]" />
-        <div className="mx-auto grid max-w-[92rem] gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:72px_72px]" />
+        <div className="relative mx-auto grid max-w-[92rem] gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
           <div>
             <Badge className="mb-4 rounded-lg bg-[#c8ff1a] text-zinc-950">{page.eyebrow}</Badge>
             <h1 className="max-w-4xl text-4xl font-semibold leading-tight sm:text-5xl">{page.title}</h1>
@@ -330,20 +331,46 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
             </div>
           </div>
 
-          <div className="grid content-start gap-3 rounded-2xl border border-white/12 bg-white/[0.06] p-5 shadow-2xl shadow-black/25">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c8ff1a]">Built around outcomes</p>
-            {page.highlights.map((highlight) => (
-              <div key={highlight} className="flex gap-3 rounded-lg border border-white/10 bg-white/[0.06] p-3">
-                <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[#c8ff1a]" />
-                <p className="text-sm font-semibold text-white">{highlight}</p>
+          <div className="border border-white/12 bg-white/[0.055] p-5 shadow-2xl shadow-black/25 backdrop-blur">
+            <div className="flex items-center justify-between border-b border-white/10 pb-4">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c8ff1a]">
+                  Executive View
+                </p>
+                <h2 className="mt-2 text-xl font-semibold">Operating control plane</h2>
               </div>
-            ))}
+              <span className="rounded bg-[#c8ff1a] px-3 py-1 text-xs font-bold text-zinc-950">
+                2013-2026
+              </span>
+            </div>
+            <div className="mt-4 grid gap-3">
+              {page.highlights.map((highlight, index) => (
+                <div key={highlight} className="grid grid-cols-[44px_1fr] items-center border border-white/10 bg-black/18 p-3">
+                  <span className="font-mono text-sm font-bold text-[#c8ff1a]">
+                    0{index + 1}
+                  </span>
+                  <p className="text-sm font-semibold text-white">{highlight}</p>
+                </div>
+              ))}
+            </div>
+            {'processFlow' in page && (
+              <div className="mt-4 grid grid-cols-3 border border-white/10 bg-black/22 text-center">
+                {['Assess', 'Deploy', 'Measure'].map((item) => (
+                  <div key={item} className="border-r border-white/10 px-3 py-4 last:border-r-0">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/42">
+                      Control
+                    </p>
+                    <p className="mt-1 text-sm font-semibold">{item}</p>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
 
       {'processFlow' in page && (
-        <section className="overflow-hidden border-b border-border bg-[#f7f8f4]">
+        <section className="overflow-hidden border-b border-border bg-white">
           <div className="mx-auto max-w-[92rem] px-4 py-10 sm:px-6 lg:px-8">
             <div className="mb-6 grid gap-4 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
               <div>
@@ -361,53 +388,70 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
               </p>
             </div>
 
-            <div className="relative rounded-2xl border border-[#2037d8]/15 bg-[#08111f] p-4 text-white shadow-2xl shadow-[#2037d8]/15 sm:p-6">
-              <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:48px_48px]" />
-              <div className="relative grid gap-5 xl:grid-cols-[1fr_240px_1fr] xl:items-center">
-                <div className="grid gap-4">
-                  {page.processFlow.slice(0, 2).map((step) => (
-                    <ProcessNode key={step.phase} step={step} />
-                  ))}
-                </div>
-
-                <div className="relative mx-auto grid size-56 place-items-center rounded-full border border-[#c8ff1a]/35 bg-[#2037d8]/35 shadow-[0_0_80px_rgba(32,55,216,0.55)]">
-                  <div className="absolute size-44 rounded-full border border-dashed border-white/24" />
-                  <div className="absolute size-28 rounded-full border border-[#c8ff1a]/45 bg-[#c8ff1a]/10" />
-                  <div className="relative max-w-32 text-center">
-                    <p className="font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[#c8ff1a]">
-                      Skill Inventions
+            <div className="border border-[#2037d8]/18 bg-[#f8fbff] shadow-xl shadow-[#2037d8]/10">
+              <div className="grid border-b border-[#2037d8]/14 bg-[#071223] text-white lg:grid-cols-[1fr_1fr_1fr_1fr]">
+                {['Current State', 'Target Design', 'Execution Control', 'Measured Outcomes'].map((label) => (
+                  <div key={label} className="border-b border-white/10 px-5 py-4 lg:border-b-0 lg:border-r lg:border-white/10 last:border-r-0">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#c8ff1a]">
+                      Operating Layer
                     </p>
-                    <p className="mt-2 text-lg font-semibold leading-5">Technology Ecosystem</p>
-                    <p className="mt-2 text-[11px] leading-4 text-white/58">Process + people + platform</p>
+                    <p className="mt-1 text-sm font-semibold">{label}</p>
                   </div>
-                </div>
+                ))}
+              </div>
 
-                <div className="grid gap-4">
-                  {page.processFlow.slice(2).map((step) => (
-                    <ProcessNode key={step.phase} step={step} />
+              <div className="relative grid gap-0 lg:grid-cols-4">
+                <div className="absolute left-[12.5%] right-[12.5%] top-10 hidden h-px bg-[#2037d8]/30 lg:block" />
+                {page.processFlow.map((step, index) => (
+                  <div key={step.phase} className="relative border-b border-[#2037d8]/12 p-5 lg:border-b-0 lg:border-r last:border-r-0">
+                    <div className="mb-5 flex items-center gap-3">
+                      <span className="relative z-10 grid size-12 place-items-center rounded-full border-4 border-white bg-[#2037d8] font-mono text-sm font-bold text-white shadow-lg shadow-[#2037d8]/20">
+                        {step.phase}
+                      </span>
+                      {index < page.processFlow.length - 1 && (
+                        <span className="hidden h-px flex-1 bg-[#2037d8]/30 lg:block" />
+                      )}
+                    </div>
+                    <h3 className="text-lg font-semibold text-[#071223]">{step.title}</h3>
+                    <p className="mt-3 min-h-24 text-sm leading-6 text-muted-foreground">{step.copy}</p>
+                    <div className="mt-5 grid gap-3">
+                      <div className="border-l-4 border-[#c8ff1a] bg-white p-3 shadow-sm">
+                        <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#486000]">KPI</p>
+                        <p className="mt-1 text-sm font-semibold text-[#071223]">{step.kpi}</p>
+                      </div>
+                      <div className="border-l-4 border-[#2037d8] bg-white p-3 shadow-sm">
+                        <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-muted-foreground">Outcome</p>
+                        <p className="mt-1 text-sm font-semibold leading-5 text-[#071223]">{step.outcome}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="grid border-t border-[#2037d8]/14 bg-white lg:grid-cols-[0.85fr_1.15fr]">
+                <div className="border-b border-[#2037d8]/14 p-5 lg:border-b-0 lg:border-r">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2037d8]">
+                    Governance Rhythm
+                  </p>
+                  <h3 className="mt-2 text-xl font-semibold text-[#071223]">Weekly operating cadence</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                    Stakeholders see blockers, ownership, KPI movement, and launch readiness in one review model.
+                  </p>
+                </div>
+                <div className="grid sm:grid-cols-4">
+                  {page.kpis.map(([title, copy]) => (
+                    <div key={title} className="border-b border-[#2037d8]/12 p-4 sm:border-b-0 sm:border-r last:border-r-0">
+                      <p className="text-sm font-semibold text-[#2037d8]">{title}</p>
+                      <p className="mt-2 text-xs leading-5 text-muted-foreground">{copy}</p>
+                    </div>
                   ))}
                 </div>
               </div>
             </div>
 
-            <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-              {page.kpis.map(([title, copy]) => (
-                <div key={title} className="rounded-lg border border-border bg-white p-4 shadow-sm">
-                  <p className="text-sm font-semibold text-[#2037d8]">{title}</p>
-                  <p className="mt-2 text-xs leading-5 text-muted-foreground">{copy}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {!('processFlow' in page) && (
-        <section className="border-b border-border bg-[#f7f8f4]">
-          <div className="mx-auto max-w-[92rem] px-4 py-10 sm:px-6 lg:px-8">
-            <div className="grid gap-3 md:grid-cols-3">
+            <div className="mt-5 grid gap-3 lg:grid-cols-3">
               {page.outcomes.map((outcome) => (
-                <div key={outcome} className="rounded-lg border border-[#2037d8]/15 bg-white p-4 shadow-sm">
+                <div key={outcome} className="border border-[#2037d8]/15 bg-[#f8fbff] p-4 shadow-sm">
                   <CheckCircle2 className="mb-3 size-5 text-[#2037d8]" />
                   <p className="text-sm font-semibold leading-6">{outcome}</p>
                 </div>
@@ -418,24 +462,28 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
       )}
 
       {'mastery' in page && (
-        <section className="border-b border-border bg-white">
-          <div className="mx-auto grid max-w-[92rem] gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
-            <div className="rounded-xl bg-[#08111f] p-5 text-white shadow-xl shadow-black/15">
-              <Badge className="mb-4 rounded-lg bg-[#c8ff1a] text-zinc-950">
+        <section className="border-b border-border bg-[#f7f8f4]">
+          <div className="mx-auto grid max-w-[92rem] gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[0.88fr_1.12fr] lg:px-8">
+            <div className="border border-[#071223]/10 bg-white p-6 shadow-lg shadow-black/5">
+              <Badge className="mb-4 rounded-lg bg-[#071223] text-white">
                 Practice Framework
               </Badge>
               <h2 className="text-2xl font-semibold leading-tight sm:text-3xl">
                 {page.mastery.title}
               </h2>
-              <p className="mt-4 text-sm leading-6 text-white/68">{page.mastery.copy}</p>
+              <p className="mt-4 text-sm leading-6 text-muted-foreground">{page.mastery.copy}</p>
             </div>
 
             <div className="grid gap-3 sm:grid-cols-2">
-              {page.mastery.principles.map(([title, copy]) => (
-                <article key={title} className="rounded-lg border border-border bg-[#f7f8f4] p-4 shadow-sm">
-                  <CheckCircle2 className="mb-3 size-5 text-[#2037d8]" />
-                  <h3 className="text-sm font-semibold">{title}</h3>
-                  <p className="mt-2 text-xs leading-5 text-muted-foreground">{copy}</p>
+              {page.mastery.principles.map(([title, copy], index) => (
+                <article key={title} className="border border-border bg-white p-4 shadow-sm">
+                  <div className="mb-3 flex items-center gap-3">
+                    <span className="grid size-8 place-items-center bg-[#eef8fc] font-mono text-xs font-bold text-[#2037d8]">
+                      {index + 1}
+                    </span>
+                    <h3 className="text-sm font-semibold">{title}</h3>
+                  </div>
+                  <p className="text-xs leading-5 text-muted-foreground">{copy}</p>
                 </article>
               ))}
             </div>
@@ -602,42 +650,5 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
         </div>
       </footer>
     </main>
-  );
-}
-
-function ProcessNode({
-  step,
-}: {
-  step: {
-    phase: string;
-    title: string;
-    copy: string;
-    kpi: string;
-    outcome: string;
-  };
-}) {
-  return (
-    <article className="group relative overflow-hidden rounded-xl border border-white/12 bg-white/[0.075] p-4 shadow-xl shadow-black/15 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-[#c8ff1a]/50 hover:bg-white/[0.11]">
-      <div className="absolute -right-8 -top-8 size-24 rounded-full bg-[#c8ff1a]/10 blur-2xl transition group-hover:bg-[#c8ff1a]/20" />
-      <div className="relative flex items-start gap-3">
-        <span className="grid size-11 shrink-0 place-items-center rounded-lg bg-[#c8ff1a] font-mono text-sm font-bold text-zinc-950">
-          {step.phase}
-        </span>
-        <div>
-          <h3 className="text-base font-semibold">{step.title}</h3>
-          <p className="mt-1 text-xs leading-5 text-white/62">{step.copy}</p>
-        </div>
-      </div>
-      <div className="relative mt-4 grid gap-2 sm:grid-cols-2">
-        <div className="rounded-lg border border-[#c8ff1a]/30 bg-[#c8ff1a]/10 p-3">
-          <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#c8ff1a]">KPI</p>
-          <p className="mt-1 text-xs font-semibold leading-5">{step.kpi}</p>
-        </div>
-        <div className="rounded-lg border border-white/10 bg-black/18 p-3">
-          <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-white/46">Outcome</p>
-          <p className="mt-1 text-xs font-semibold leading-5 text-white/78">{step.outcome}</p>
-        </div>
-      </div>
-    </article>
   );
 }
