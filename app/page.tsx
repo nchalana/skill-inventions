@@ -187,7 +187,7 @@ const navGroups = [
     items: [
       {
         title: 'Technology Ecosystem',
-        copy: 'Cloud, data, ERP, mobile, QA, security, AI, and design platforms we support',
+        copy: 'Process-led platform, integration, KPI, and workforce enablement framework',
         href: '/capabilities/technology-ecosystem',
       },
       {
@@ -197,7 +197,7 @@ const navGroups = [
       },
       {
         title: 'Cloud & Platform Engineering',
-        copy: 'Infrastructure modernization, cloud operations, automation, and reliability support',
+        copy: 'Infrastructure modernization, automation, reliability, and cloud operations',
         href: '/capabilities/cloud-platform-engineering',
       },
       {
@@ -207,7 +207,7 @@ const navGroups = [
       },
       {
         title: 'Security & Trust',
-        copy: 'Cybersecurity, identity, verification, compliance support, and human review workflows',
+        copy: 'Cybersecurity, identity, compliance, verification, and human-review workflows',
         href: '/capabilities/security-trust',
       },
     ],

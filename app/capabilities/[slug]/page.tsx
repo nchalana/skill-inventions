@@ -22,17 +22,79 @@ const capabilityPages = {
   },
   'technology-ecosystem': {
     eyebrow: 'Capability / Technology Ecosystem',
-    title: 'A practical technology bench across cloud, apps, data, ERP, security, QA, and design.',
+    title: 'Enterprise infrastructure, integration, and workforce enablement moving in one process.',
     description:
-      'The Skill Inventions ecosystem covers the tools organizations already run, the platforms they are modernizing, and the AI workflows they are adding next.',
-    highlights: ['Enterprise platforms', 'Modern engineering stacks', 'AI-enabled delivery tooling'],
+      'Stakeholders do not need another catalog of tools. They need a clear operating path: assess the current stack, design the ecosystem, deploy with accountable teams, and measure adoption, reliability, and business impact.',
+    highlights: ['Process-led modernization', 'Measured delivery governance', 'Technology and talent synchronized'],
+    processFlow: [
+      {
+        phase: '01',
+        title: 'Gap Assessment',
+        copy: 'Map current platforms, integrations, team capability, risk points, release friction, and business priorities.',
+        kpi: 'Baseline readiness score',
+        outcome: 'A shared view of what must be stabilized, modernized, automated, or staffed first.',
+      },
+      {
+        phase: '02',
+        title: 'Ecosystem Design',
+        copy: 'Define the target architecture, data flows, security controls, delivery roles, and enablement plan.',
+        kpi: 'Roadmap acceptance',
+        outcome: 'A practical blueprint that connects cloud, applications, data, security, QA, and talent needs.',
+      },
+      {
+        phase: '03',
+        title: 'Synchronized Deployment',
+        copy: 'Launch platform work and role-ready professionals together with runbooks, owners, checks, and reporting rhythm.',
+        kpi: 'Cycle time to release',
+        outcome: 'Cleaner delivery execution without separating technology change from the people operating it.',
+      },
+      {
+        phase: '04',
+        title: 'Continuous Scale',
+        copy: 'Track adoption, reliability, automation coverage, skill readiness, and improvement actions after launch.',
+        kpi: 'Reliability and adoption lift',
+        outcome: 'A system that keeps improving as business demand, tooling, and team structure evolve.',
+      },
+    ],
+    kpis: [
+      ['Reliability', 'Uptime, incident frequency, recovery time, release defects, monitoring coverage'],
+      ['Adoption', 'Active users, workflow usage, training completion, role readiness, support demand'],
+      ['Efficiency', 'Cloud spend, automation rate, manual handoffs removed, delivery cycle time'],
+      ['Risk', 'Security gaps, access issues, audit evidence, data-quality exceptions, compliance readiness'],
+    ],
+    mastery: {
+      title: 'How Skill Inventions mastered this operating art',
+      copy:
+        'Since 2013, Skill Inventions has worked through mobile, cloud, SaaS, data, cybersecurity, and AI shifts. The lesson is consistent: durable technology change happens when architecture, people, documentation, release discipline, and measurement move together.',
+      principles: [
+        ['Stack reality first', 'Start with the platforms, integrations, constraints, and people already inside the organization.'],
+        ['Process before tooling', 'Define ownership, checkpoints, documentation, and success measures before selecting or adding tools.'],
+        ['Talent tied to outcomes', 'Map engineers, analysts, architects, QA, security, and delivery roles to the work that must actually ship.'],
+        ['Evidence over activity', 'Track reliability, adoption, efficiency, and risk so stakeholders see progress beyond status meetings.'],
+      ],
+    },
+    industries: [
+      'Healthcare and life sciences',
+      'Financial services',
+      'Public sector and M/WBE programs',
+      'Retail and e-commerce',
+      'Logistics and supply chain',
+      'Telecommunications',
+      'Construction and field operations',
+      'Professional services',
+    ],
+    evidenceTracks: [
+      ['Case studies', 'Modernization journeys, integration recoveries, AI/data enablement, and delivery-bench outcomes can be packaged as client-approved proof points.'],
+      ['Whitepapers', 'Thought leadership on Technology Ecosystem operating models, AI talent delivery, cloud readiness, data trust, and verification workflows.'],
+      ['Playbooks', 'Reusable stakeholder guides for gap assessment, platform modernization, synchronized deployment, and continuous scale.'],
+    ],
     services: [
       ['Application engineering', 'Java, .NET, Python, Android, iOS, React, APIs, integrations, and full-stack delivery.'],
       ['Enterprise systems', 'SAP, Salesforce, PeopleSoft, JD Edwards, BAAN, SQL platforms, and modernization support.'],
       ['Delivery tooling', 'GitHub, Bitbucket, Jira, Azure DevOps, Selenium, Playwright, Cucumber, Copilot, and Cursor.'],
       ['Design and experience', 'UI/UX, product design, Figma, Adobe, Miro, Webflow, and conversion-focused web delivery.'],
     ],
-    outcomes: ['One delivery partner across legacy and modern stacks', 'Talent matched to real operating environments', 'Cleaner handoffs between engineering, data, security, and product teams'],
+    outcomes: ['A visible process stakeholders can sponsor and measure', 'Technology changes supported by the right operating roles', 'Cleaner handoffs between engineering, data, security, and product teams'],
   },
   'cloud-platform-engineering': {
     eyebrow: 'Capability / Cloud & Platform Engineering',
@@ -169,6 +231,126 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
         </div>
       </section>
 
+      {'processFlow' in page && (
+        <section className="border-b border-border bg-[#f7f8f4]">
+          <div className="mx-auto max-w-[92rem] px-4 py-10 sm:px-6 lg:px-8">
+            <div className="mb-6 grid gap-4 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
+              <div>
+                <Badge variant="outline" className="mb-2 rounded-lg border-[#2037d8]/25 bg-white">
+                  Practice Operating Model
+                </Badge>
+                <h2 className="text-2xl font-semibold leading-tight sm:text-3xl">
+                  Process flow, KPI, and outcome in one view.
+                </h2>
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                Technology Ecosystem engagements are structured so stakeholders can track
+                where the work is, what is being measured, and which business result each
+                phase is meant to produce.
+              </p>
+            </div>
+
+            <div className="relative grid gap-3 lg:grid-cols-4">
+              <div className="pointer-events-none absolute left-[12%] right-[12%] top-11 hidden h-px bg-[#2037d8]/25 lg:block" />
+              {page.processFlow.map((step) => (
+                <article
+                  key={step.phase}
+                  className="relative rounded-lg border border-[#2037d8]/14 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#2037d8]/40 hover:shadow-xl hover:shadow-[#2037d8]/10"
+                >
+                  <div className="mb-4 flex items-center gap-3">
+                    <span className="grid size-12 place-items-center rounded-full bg-[#2037d8] font-mono text-sm font-bold text-white ring-4 ring-[#eef8fc]">
+                      {step.phase}
+                    </span>
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#2037d8]">
+                        Process step
+                      </p>
+                      <h3 className="text-base font-semibold">{step.title}</h3>
+                    </div>
+                  </div>
+                  <p className="min-h-20 text-sm leading-6 text-muted-foreground">{step.copy}</p>
+                  <div className="mt-4 grid gap-2">
+                    <div className="rounded-lg border border-[#c8ff1a]/45 bg-[#f5ffe0] p-3">
+                      <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#486000]">
+                        KPI
+                      </p>
+                      <p className="mt-1 text-sm font-semibold text-zinc-950">{step.kpi}</p>
+                    </div>
+                    <div className="rounded-lg border border-border bg-[#f7f8f4] p-3">
+                      <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground">
+                        Outcome
+                      </p>
+                      <p className="mt-1 text-sm font-semibold leading-5">{step.outcome}</p>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+              {page.kpis.map(([title, copy]) => (
+                <div key={title} className="rounded-lg border border-border bg-white p-4 shadow-sm">
+                  <p className="text-sm font-semibold text-[#2037d8]">{title}</p>
+                  <p className="mt-2 text-xs leading-5 text-muted-foreground">{copy}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {'mastery' in page && (
+        <section className="border-b border-border bg-white">
+          <div className="mx-auto grid max-w-[92rem] gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+            <div className="rounded-xl bg-[#08111f] p-5 text-white shadow-xl shadow-black/15">
+              <Badge className="mb-4 rounded-lg bg-[#c8ff1a] text-zinc-950">
+                Practice Framework
+              </Badge>
+              <h2 className="text-2xl font-semibold leading-tight sm:text-3xl">
+                {page.mastery.title}
+              </h2>
+              <p className="mt-4 text-sm leading-6 text-white/68">{page.mastery.copy}</p>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              {page.mastery.principles.map(([title, copy]) => (
+                <article key={title} className="rounded-lg border border-border bg-[#f7f8f4] p-4 shadow-sm">
+                  <CheckCircle2 className="mb-3 size-5 text-[#2037d8]" />
+                  <h3 className="text-sm font-semibold">{title}</h3>
+                  <p className="mt-2 text-xs leading-5 text-muted-foreground">{copy}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {'industries' in page && (
+        <section className="border-b border-border bg-[#eef8fc]">
+          <div className="mx-auto max-w-[92rem] px-4 py-10 sm:px-6 lg:px-8">
+            <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <Badge variant="outline" className="mb-2 rounded-lg border-[#2037d8]/25 bg-white">
+                  Industry Coverage
+                </Badge>
+                <h2 className="text-2xl font-semibold">Built for technology environments with real operating pressure.</h2>
+              </div>
+              <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
+                The same framework adapts across regulated, customer-facing, field, and enterprise environments where systems, people, and data have to work together.
+              </p>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {page.industries.map((industry) => (
+                <div key={industry} className="rounded-lg border border-[#2037d8]/14 bg-white p-4 text-sm font-semibold shadow-sm">
+                  {industry}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="border-b border-border bg-white">
         <div className="mx-auto max-w-[92rem] px-4 py-10 sm:px-6 lg:px-8">
           <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
@@ -192,6 +374,28 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
           </div>
         </div>
       </section>
+
+      {'evidenceTracks' in page && (
+        <section className="border-b border-border bg-[#f7f8f4]">
+          <div className="mx-auto grid max-w-[92rem] gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[0.7fr_1.3fr] lg:px-8">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2037d8]">Evidence assets</p>
+              <h2 className="mt-2 text-2xl font-semibold leading-tight">Case studies and whitepapers should prove the framework, not decorate the page.</h2>
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                As client-approved material becomes available, this section can hold downloadable proof around process, KPI movement, and delivery outcomes.
+              </p>
+            </div>
+            <div className="grid gap-3 md:grid-cols-3">
+              {page.evidenceTracks.map(([title, copy]) => (
+                <article key={title} className="rounded-lg border border-border bg-white p-4 shadow-sm">
+                  <h3 className="text-sm font-semibold text-[#2037d8]">{title}</h3>
+                  <p className="mt-2 text-xs leading-5 text-muted-foreground">{copy}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="bg-[#eef8fc]">
         <div className="mx-auto grid max-w-[92rem] gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
