@@ -27,6 +27,11 @@ const capabilityPages = {
       'Stakeholders do not need another catalog of tools. They need a clear operating path: assess the current stack, design the ecosystem, deploy with accountable teams, and measure adoption, reliability, and business impact.',
     highlights: ['Process-led modernization', 'Measured delivery governance', 'Technology and talent synchronized'],
     heroImage: '/technology-ecosystem-bg.png',
+    heroVisuals: [
+      '/technology-ecosystem-workshop.png',
+      '/technology-ecosystem-people.png',
+      '/technology-ecosystem-kpi.png',
+    ],
     processFlow: [
       {
         phase: '01',
@@ -342,32 +347,44 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
             </div>
           </div>
 
-          <div className="border border-[#2037d8]/14 bg-white/82 p-5 shadow-2xl shadow-[#2037d8]/12 backdrop-blur">
-            <div className="flex items-center justify-between border-b border-[#2037d8]/12 pb-4">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#2037d8]">
-                  Executive View
-                </p>
-                <h2 className="mt-2 text-xl font-semibold">Operating control plane</h2>
-              </div>
-              <span className="rounded bg-[#c8ff1a] px-3 py-1 text-xs font-bold text-zinc-950">
-                2013-2026
-              </span>
-            </div>
-            <div className="mt-4 grid gap-3">
-              {page.highlights.map((highlight, index) => (
-                <div key={highlight} className="grid grid-cols-[44px_1fr] items-center border border-[#2037d8]/12 bg-[#f8fbff]/88 p-3">
-                  <span className="font-mono text-sm font-bold text-[#2037d8]">
-                    0{index + 1}
-                  </span>
-                  <p className="text-sm font-semibold text-foreground">{highlight}</p>
+          <div className="relative pb-6">
+            {'heroVisuals' in page && (
+              <div className="grid gap-3">
+                <div className="relative overflow-hidden border border-white bg-white p-2 shadow-2xl shadow-[#2037d8]/18">
+                  <img
+                    src={page.heroVisuals[0]}
+                    alt="Technology operating model workshop"
+                    className="aspect-[16/9] w-full object-cover"
+                  />
+                  <div className="absolute left-5 top-5 bg-white/92 px-4 py-2 shadow-lg backdrop-blur">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#2037d8]">
+                      Executive View
+                    </p>
+                    <p className="text-sm font-semibold">Operating control plane</p>
+                  </div>
                 </div>
-              ))}
-            </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="overflow-hidden border border-white bg-white p-2 shadow-lg shadow-[#2037d8]/10">
+                    <img
+                      src={page.heroVisuals[1]}
+                      alt="Stakeholder technology discussion"
+                      className="aspect-[4/3] w-full object-cover"
+                    />
+                  </div>
+                  <div className="overflow-hidden border border-white bg-white p-2 shadow-lg shadow-[#2037d8]/10">
+                    <img
+                      src={page.heroVisuals[2]}
+                      alt="KPI and analytics review"
+                      className="aspect-[4/3] w-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
             {'processFlow' in page && (
-              <div className="mt-4 grid grid-cols-3 border border-[#2037d8]/12 bg-white/86 text-center">
-                {['Assess', 'Deploy', 'Measure'].map((item) => (
-                  <div key={item} className="border-r border-[#2037d8]/12 px-3 py-4 last:border-r-0">
+              <div className="absolute bottom-0 left-5 right-5 grid grid-cols-3 border border-[#2037d8]/12 bg-white/94 text-center shadow-xl shadow-[#2037d8]/12 backdrop-blur">
+                {['Assess', 'Design', 'Measure'].map((item) => (
+                  <div key={item} className="border-r border-[#2037d8]/12 px-3 py-3 last:border-r-0">
                     <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
                       Control
                     </p>
