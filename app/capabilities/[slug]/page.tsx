@@ -26,6 +26,7 @@ const capabilityPages = {
     description:
       'Stakeholders do not need another catalog of tools. They need a clear operating path: assess the current stack, design the ecosystem, deploy with accountable teams, and measure adoption, reliability, and business impact.',
     highlights: ['Process-led modernization', 'Measured delivery governance', 'Technology and talent synchronized'],
+    heroImage: '/technology-ecosystem-bg.png',
     processFlow: [
       {
         phase: '01',
@@ -302,8 +303,18 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
       </header>
 
       <section className="relative overflow-hidden bg-[#071223] text-white">
+        {'heroImage' in page && (
+          <img
+            src={page.heroImage}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover opacity-70"
+          />
+        )}
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,18,35,0.96)_0%,rgba(7,18,35,0.86)_44%,rgba(7,18,35,0.58)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,18,35,0.16),rgba(7,18,35,0.9))]" />
         <div className="absolute inset-x-0 top-0 h-1.5 bg-[linear-gradient(90deg,#00a7d8,#c8ff1a,#2037d8,#e0ab24)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:72px_72px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.032)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.032)_1px,transparent_1px)] bg-[size:72px_72px]" />
         <div className="relative mx-auto grid max-w-[92rem] gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
           <div>
             <Badge className="mb-4 rounded-lg bg-[#c8ff1a] text-zinc-950">{page.eyebrow}</Badge>
