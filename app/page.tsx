@@ -473,10 +473,11 @@ const footerColumns = [
   {
     title: 'Platform Intelligence',
     links: [
-      { label: 'Sample Reports', href: '#reports' },
-      { label: 'Watch Validation Video', href: 'https://www.youtube.com/watch?v=C8JYPJ9PuLA' },
+      { label: 'Resume Verification', href: '/platform-intelligence' },
+      { label: 'Document Verification', href: '#dvs' },
       { label: 'Developers', href: 'mailto:hello@skillinventions.com?subject=Platform%20Intelligence%20Developer%20Access' },
       { label: 'Demo Login', href: 'mailto:hello@skillinventions.com?subject=Platform%20Intelligence%20Demo%20Login' },
+      { label: 'Support', href: 'mailto:hello@skillinventions.com?subject=Platform%20Intelligence%20Support' },
     ],
   },
   {
