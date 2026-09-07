@@ -423,11 +423,24 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
                   Process flow, KPI, and outcome in one view.
                 </h2>
               </div>
-              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
-                Technology Ecosystem engagements are structured so stakeholders can track
-                where the work is, what is being measured, and which business result each
-                phase is meant to produce.
-              </p>
+              <div className="grid gap-3 sm:grid-cols-3">
+                {[
+                  ['01', 'Process Flow', 'Assess → Design → Deploy → Scale'],
+                  ['02', 'KPI Signal', 'Reliability · Adoption · Efficiency · Risk'],
+                  ['03', 'Outcome View', 'Roadmap · Ownership · Business impact'],
+                ].map(([number, label, value], index) => (
+                  <div key={label} className="border border-[#2037d8]/14 bg-[#f8fbff] p-4 shadow-sm">
+                    <div className="mb-3 flex items-center gap-2">
+                      <span className="grid size-8 place-items-center rounded-full bg-[#2037d8] font-mono text-xs font-bold text-white">
+                        {number}
+                      </span>
+                      {index < 2 && <ArrowRight className="hidden size-4 text-[#2037d8] sm:block" />}
+                    </div>
+                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#2037d8]">{label}</p>
+                    <p className="mt-2 text-sm font-semibold leading-5 text-[#071223]">{value}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="border border-[#2037d8]/18 bg-white p-5 shadow-xl shadow-[#2037d8]/10">
