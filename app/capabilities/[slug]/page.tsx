@@ -36,28 +36,28 @@ const capabilityPages = {
       {
         phase: '01',
         title: 'Gap Assessment',
-        copy: 'Map current platforms, integrations, team capability, risk points, release friction, and business priorities.',
+        copy: 'Map platforms, people, risks, friction, and priorities.',
         kpi: 'Baseline readiness score',
         outcome: 'A shared view of what must be stabilized, modernized, automated, or staffed first.',
       },
       {
         phase: '02',
         title: 'Ecosystem Design',
-        copy: 'Define the target architecture, data flows, security controls, delivery roles, and enablement plan.',
+        copy: 'Define architecture, data flows, controls, roles, and roadmap.',
         kpi: 'Roadmap acceptance',
         outcome: 'A practical blueprint that connects cloud, applications, data, security, QA, and talent needs.',
       },
       {
         phase: '03',
         title: 'Synchronized Deployment',
-        copy: 'Launch platform work and role-ready professionals together with runbooks, owners, checks, and reporting rhythm.',
+        copy: 'Launch platform work, role-ready teams, runbooks, and owners.',
         kpi: 'Cycle time to release',
         outcome: 'Cleaner delivery execution without separating technology change from the people operating it.',
       },
       {
         phase: '04',
         title: 'Continuous Scale',
-        copy: 'Track adoption, reliability, automation coverage, skill readiness, and improvement actions after launch.',
+        copy: 'Track adoption, reliability, automation, readiness, and improvements.',
         kpi: 'Reliability and adoption lift',
         outcome: 'A system that keeps improving as business demand, tooling, and team structure evolve.',
       },
@@ -233,6 +233,13 @@ const officeLocations = [
   ['United States', 'Skill Inventions Inc.', '61-36, 170th Street, Suite M-2, Fresh Meadows, NY 11365'],
   ['India', 'Skill Inventions Pvt. Ltd.', 'Venkateshwara Nagar Colony, Sainathpuram, Dr. AS Rao Nagar, Hyderabad - 500062'],
   ['Canada', 'Skill Inventions Canada', '1500 W Georgia St Suite # 1300, Vancouver, British Columbia V6G 2Z6, CA'],
+];
+
+const processAccentClasses = [
+  'bg-[#2037d8]',
+  'bg-[#00a7d8]',
+  'bg-[#22a66b]',
+  'bg-[#e0ab24]',
 ];
 
 export function generateStaticParams() {
@@ -416,74 +423,78 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
               </p>
             </div>
 
-            <div className="border border-[#2037d8]/18 bg-[#f8fbff] shadow-xl shadow-[#2037d8]/10">
-              <div className="grid border-b border-[#2037d8]/14 bg-[#2037d8] text-white lg:grid-cols-[1fr_1fr_1fr_1fr]">
-                {['Current State', 'Target Design', 'Execution Control', 'Measured Outcomes'].map((label) => (
-                  <div key={label} className="border-b border-white/10 px-5 py-4 lg:border-b-0 lg:border-r lg:border-white/10 last:border-r-0">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#c8ff1a]">
-                      Operating Layer
-                    </p>
-                    <p className="mt-1 text-sm font-semibold">{label}</p>
+            <div className="border border-[#2037d8]/18 bg-white p-5 shadow-xl shadow-[#2037d8]/10">
+              <div className="mb-4 grid gap-3 bg-[#f8fbff] p-3 sm:grid-cols-3">
+                {[
+                  ['Input', 'Current stack, people, risk, priorities'],
+                  ['Method', 'Assess, design, deploy, scale'],
+                  ['Output', 'Measured roadmap and accountable delivery'],
+                ].map(([label, value]) => (
+                  <div key={label} className="border border-[#2037d8]/12 bg-white px-4 py-3">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#2037d8]">{label}</p>
+                    <p className="mt-1 text-sm font-semibold text-[#071223]">{value}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="relative grid gap-0 lg:grid-cols-4">
-                <div className="absolute left-[12.5%] right-[12.5%] top-10 hidden h-px bg-[#2037d8]/30 lg:block" />
+              <div className="grid gap-3 lg:grid-cols-[1fr_36px_1fr_36px_1fr_36px_1fr] lg:items-center">
                 {page.processFlow.map((step, index) => (
-                  <div key={step.phase} className="relative border-b border-[#2037d8]/12 p-5 lg:border-b-0 lg:border-r last:border-r-0">
-                    <div className="mb-5 flex items-center gap-3">
-                      <span className="relative z-10 grid size-12 place-items-center rounded-full border-4 border-white bg-[#2037d8] font-mono text-sm font-bold text-white shadow-lg shadow-[#2037d8]/20">
-                        {step.phase}
-                      </span>
-                      {index < page.processFlow.length - 1 && (
-                        <span className="hidden h-px flex-1 bg-[#2037d8]/30 lg:block" />
-                      )}
-                    </div>
-                    <h3 className="text-lg font-semibold text-[#071223]">{step.title}</h3>
-                    <p className="mt-3 min-h-24 text-sm leading-6 text-muted-foreground">{step.copy}</p>
-                    <div className="mt-5 grid gap-3">
-                      <div className="border-l-4 border-[#c8ff1a] bg-white p-3 shadow-sm">
-                        <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#486000]">KPI</p>
-                        <p className="mt-1 text-sm font-semibold text-[#071223]">{step.kpi}</p>
+                  <div key={step.phase} className="contents">
+                    <article className="group overflow-hidden border border-[#2037d8]/14 bg-[#f8fbff] shadow-sm transition hover:-translate-y-1 hover:border-[#2037d8]/40 hover:shadow-xl hover:shadow-[#2037d8]/10">
+                      <div className={`h-2 ${processAccentClasses[index]}`} />
+                      <div className="p-5 text-center">
+                        <span className="mx-auto grid size-12 place-items-center rounded-full bg-white font-mono text-sm font-bold text-[#2037d8] ring-1 ring-[#2037d8]/18">
+                          {step.phase}
+                        </span>
+                        <h3 className="mt-4 text-lg font-semibold text-[#071223]">{step.title}</h3>
+                        <p className="mt-2 text-sm leading-5 text-muted-foreground">
+                          {step.copy}
+                        </p>
                       </div>
-                      <div className="border-l-4 border-[#2037d8] bg-white p-3 shadow-sm">
-                        <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-muted-foreground">Outcome</p>
-                        <p className="mt-1 text-sm font-semibold leading-5 text-[#071223]">{step.outcome}</p>
+                    </article>
+                    {index < page.processFlow.length - 1 && (
+                      <div className="flex items-center justify-center">
+                        <div className="hidden size-9 place-items-center rounded-full border border-[#2037d8]/18 bg-white shadow-sm lg:grid">
+                          <ArrowRight className="size-5 text-[#2037d8]" />
+                        </div>
+                        <div className="h-8 w-px bg-[#2037d8]/22 lg:hidden" />
                       </div>
-                    </div>
+                    )}
                   </div>
                 ))}
               </div>
 
-              <div className="grid border-t border-[#2037d8]/14 bg-white lg:grid-cols-[0.85fr_1.15fr]">
-                <div className="border-b border-[#2037d8]/14 p-5 lg:border-b-0 lg:border-r">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2037d8]">
-                    Governance Rhythm
-                  </p>
-                  <h3 className="mt-2 text-xl font-semibold text-[#071223]">Weekly operating cadence</h3>
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                    Stakeholders see blockers, ownership, KPI movement, and launch readiness in one review model.
-                  </p>
-                </div>
-                <div className="grid sm:grid-cols-4">
-                  {page.kpis.map(([title, copy]) => (
-                    <div key={title} className="border-b border-[#2037d8]/12 p-4 sm:border-b-0 sm:border-r last:border-r-0">
-                      <p className="text-sm font-semibold text-[#2037d8]">{title}</p>
-                      <p className="mt-2 text-xs leading-5 text-muted-foreground">{copy}</p>
-                    </div>
-                  ))}
-                </div>
+              <div className="mt-5 grid gap-3 lg:grid-cols-4">
+                {page.processFlow.map((step) => (
+                  <div key={`${step.phase}-measurement`} className="border border-[#2037d8]/12 bg-[#f8fbff] p-4">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#486000]">KPI</p>
+                    <p className="mt-1 text-sm font-semibold text-[#071223]">{step.kpi}</p>
+                    <p className="mt-3 border-t border-[#2037d8]/10 pt-3 text-xs font-semibold leading-5 text-muted-foreground">
+                      {step.outcome}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div className="mt-5 grid gap-3 lg:grid-cols-3">
-              {page.outcomes.map((outcome) => (
-                <div key={outcome} className="border border-[#2037d8]/15 bg-[#f8fbff] p-4 shadow-sm">
-                  <CheckCircle2 className="mb-3 size-5 text-[#2037d8]" />
-                  <p className="text-sm font-semibold leading-6">{outcome}</p>
-                </div>
-              ))}
+            <div className="mt-5 grid border border-[#2037d8]/14 bg-white lg:grid-cols-[0.85fr_1.15fr]">
+              <div className="border-b border-[#2037d8]/14 p-5 lg:border-b-0 lg:border-r">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2037d8]">
+                  KPI Governance
+                </p>
+                <h3 className="mt-2 text-xl font-semibold text-[#071223]">One scorecard keeps the work accountable.</h3>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  The process stays simple at the top. The scorecard tracks the operating signals underneath it.
+                </p>
+              </div>
+              <div className="grid sm:grid-cols-4">
+                {page.kpis.map(([title, copy]) => (
+                  <div key={title} className="border-b border-[#2037d8]/12 p-4 sm:border-b-0 sm:border-r last:border-r-0">
+                    <p className="text-sm font-semibold text-[#2037d8]">{title}</p>
+                    <p className="mt-2 text-xs leading-5 text-muted-foreground">{copy}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
